@@ -4,7 +4,7 @@
 #include <string>
 
 using namespace std;
-class Imovel : public Endereco
+class Imovel
 {
     public:
         Imovel();
