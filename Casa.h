@@ -9,9 +9,10 @@ class Casa : public Imovel
 {
     public:
         Casa();
-        Casa(int numPavimen, int numQuartos, double areaConst, double areaTer);
+        Casa(int NUMPAVIMEN, int NUMQUARTOS, double AREACONST, double AREATER, Endereco ENDE);
         int numPavimen, numQuartos;
         double areaConst, areaTer;
+        Endereco endereco;
     protected:
 
     private:
