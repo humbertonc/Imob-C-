@@ -1,24 +1,26 @@
-#include "Casa.h"
+#include "Apartamento.h"
 #include <string>
 using namespace std;
 
-Casa::Casa()
+Apartamento::Apartamento()
 {
-    this-> numPavimen = 0;
-    this->numQuartos = 0;
-    this->areaConst = 0;
-    this->areaTer = 0;
-    this->tipoImovel = 2;
-    disponivel = 0;
+    this->area = 0.0;
+    this->nquartos = 0;
+    this->posicao = "Não configurada";
+    this->andar = 0;
+    this->valor = 0.0;
+    this->nvagasgaragem = 0;
+    disponivel = 1;
 }
 
-Casa::Casa(int NUMPAVIMEN, int NUMQUARTOS, double AREACONST, double AREATER, Endereco ENDE){
-    this->numPavimen = NUMPAVIMEN;
-    this->numQuartos = NUMQUARTOS;
-    this->areaConst = AREACONST;
-    this->areaTer = AREATER;
-    this->tipoImovel = 2;
+Apartamento::Apartamento(double AREA, int NQUARTOS, string POSICAO, int ANDAR, double VALOR, int NVAGASGARAGEM, Endereco ENDE)
+{
+    this->area = AREA;
+    this->nquartos = NQUARTOS;
+    this->posicao = POSICAO;
+    this->andar = ANDAR;
+    this->valor = VALOR;
+    this->nvagasgaragem = NVAGASGARAGEM;
     this->endereco = ENDE;
-    disponivel = 0;
+    disponivel = 1;
 }
-
