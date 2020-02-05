@@ -1,39 +1,65 @@
-#ifndef IMOVEL_H
-#define IMOVEL_H
-#include "Endereco.h"
-#include <string>
+#include "Imovel.h"
 
-using namespace std;
-class Imovel
+Imovel::Imovel()
 {
-    public:
-        Imovel();
+    //ctor
+}
 
-        bool getAouV();
-        double getValor();
-        Endereco getEndereco();
-        int getTipo();
-        string getDescricao();
-        string getTitulo();
+bool Imovel::getAouV()
+{
+    return aouv;
+}
 
-        void setAouv(bool Aouv);
-        void setValor(double val);
-        void setEndereco(Endereco ende);
-        void setTipo(int tip);
-        void setDescricao(string desc);
-        void setTitulo(string titu);
+double Imovel::getValor()
+{
+    return valor;
+}
 
-        bool disponivel;
+Endereco Imovel::getEndereco()
+{
+    return endereco;
+}
 
-    protected:
-        int tipoImovel;
+string Imovel::getDescricao()
+{
+    return descricao;
+}
 
-    private:
-        Endereco endereco;
-        bool aouv;
-        double valor;
-        string descricao;
-        string titulo;
-};
+int Imovel::getTipo()
+{
+    return tipoImovel;
+}
 
-#endif // IMOVEL_H
+string Imovel::getTitulo()
+{
+    return titulo;
+}
+void Imovel::setAouv(bool Aouv)
+{
+    aouv = Aouv;
+}
+
+void Imovel::setEndereco(Endereco ende)
+{
+    endereco = ende;
+}
+
+void Imovel::setDescricao(string desc)
+{
+    descricao = desc;
+}
+
+void Imovel::setValor(double val)
+{
+    valor = val;
+}
+
+void Imovel::setTipo(int tip)
+{
+    tipoImovel = tip;
+}
+
+void Imovel::setTitulo(string titu)
+{
+    titulo = titu;
+}
