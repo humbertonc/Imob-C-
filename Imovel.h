@@ -9,26 +9,31 @@ class Imovel
     public:
         Imovel();
 
-        int getAouV();
+        bool getAouV();
         double getValor();
         Endereco getEndereco();
         int getTipo();
         string getDescricao();
+        string getTitulo();
 
-        void setAouv(int Aouv);
+        void setAouv(bool Aouv);
         void setValor(double val);
         void setEndereco(Endereco ende);
         void setTipo(int tip);
         void setDescricao(string desc);
+        void setTitulo(string titu);
+
+        bool disponivel;
 
     protected:
         int tipoImovel;
 
     private:
         Endereco endereco;
-        int aouv;
+        bool aouv;
         double valor;
         string descricao;
+        string titulo;
 };
 
 #endif // IMOVEL_H
