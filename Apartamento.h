@@ -14,7 +14,6 @@ class Apartamento : public Imovel
         int nquartos;
         string posicao;
         int andar;
-        double valor;
         int nvagasgaragem;
         Endereco endereco;
 };
