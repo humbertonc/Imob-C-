@@ -28,13 +28,14 @@ class Imovel
 
     protected:
         int tipoImovel;	
-
-    private:	
         Endereco endereco;	
         bool aouv;	
         double valor;	
         string descricao;	  
         string titulo;	
+
+    private:	
+       
 };
 
 #endif // IMOVEL_H
