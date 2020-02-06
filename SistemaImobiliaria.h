@@ -21,6 +21,8 @@ class SistemaImobiliaria
         void cadastraCasa(Casa cas);
         void cadastraApt(Apartamento apt);
         void mostraTodos();
+        void mostraPorTipo(int tipo);
+        void mostraAouV(bool seletor);
 
     protected:
 
