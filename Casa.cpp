@@ -1,5 +1,6 @@
 #include "Casa.h"
 #include <string>
+#include <vector>
 using namespace std;
 
 Casa::Casa()
@@ -19,5 +20,5 @@ Casa::Casa(int NUMPAVIMEN, int NUMQUARTOS, double AREACONST, double AREATER, End
     this->areaTer = AREATER;
     this->tipoImovel = 2;
     this->endereco = ENDE;
-    disponivel = 1;
+    disponivel = 0;
 }

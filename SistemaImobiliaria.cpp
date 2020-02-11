@@ -3,6 +3,8 @@
 #include "stdio.h"
 #include <string>
 #include <algorithm>
+#include <vector>
+
 using namespace std;
 
 SistemaImobiliaria::SistemaImobiliaria()
@@ -52,18 +54,18 @@ void SistemaImobiliaria::cadastraApt(Apartamento apt)
 void SistemaImobiliaria::ImprimeTerreno(Terreno ter, int num)
 {
         cout << num << ": " << ter.getTitulo() << "\n" <<endl;
-        cout << "DescriÃ§Ã£o: " << ter.getDescricao() << endl;
+        cout << "Descrição: " << ter.getDescricao() << endl;
         cout << "Valor: " << ter.getValor() << endl;
         if(ter.getAouV()){
-        cout << "DisponÃ­vel para venda" << endl;
+        cout << "Disponível para venda" << endl;
         }else{
-        cout << "DisponÃ­vel para aluguel" << endl;
+        cout << "Disponível para aluguel" << endl;
         }
-        cout << "Ãrea: " << ter.area << endl;
+        cout << "Área: " << ter.area << endl;
 
         cout << "   Endereco:" << endl;
         cout << "Rua: " << ter.getEndereco().rua << endl;
-        cout << "NÃºmero: " << ter.getEndereco().numero << endl;
+        cout << "Número: " << ter.getEndereco().numero << endl;
         cout << "CEP: " << ter.getEndereco().cep << endl;
         cout << "Bairro: " << ter.getEndereco().bairro << endl;
         cout << "Cidade: " << ter.getEndereco().cidade << endl;
@@ -73,21 +75,21 @@ void SistemaImobiliaria::ImprimeTerreno(Terreno ter, int num)
 void SistemaImobiliaria::ImprimeCasa(Casa cas, int num)
 {
         cout << num << ": " << cas.getTitulo() << "\n" <<endl;
-        cout << "DescriÃ§Ã£o: " << cas.getDescricao() << endl;
+        cout << "Descrição: " << cas.getDescricao() << endl;
         cout << "Valor: " << cas.getValor() << endl;
         if(cas.getAouV()){
-        cout << "DisponÃ­vel para venda" << endl;
+        cout << "Disponível para venda" << endl;
         }else{
-        cout << "DisponÃ­vel para aluguel" << endl;
+        cout << "Disponível para aluguel" << endl;
         }
-        cout << "Ãrea do terreno: " << cas.areaTer << endl;
-        cout << "Ãrea construÃ­da: " << cas.areaConst << endl;
-        cout << "NÃºmero de pavimentos: " << cas.numPavimen << endl;
-        cout << "NÃºmero de quartos: " << cas.numQuartos << endl;
+        cout << "Área do terreno: " << cas.areaTer << endl;
+        cout << "Área construída: " << cas.areaConst << endl;
+        cout << "Número de pavimentos: " << cas.numPavimen << endl;
+        cout << "Número de quartos: " << cas.numQuartos << endl;
 
         cout << "   Endereco:" << endl;
         cout << "Rua: " << cas.getEndereco().rua << endl;
-        cout << "NÃºmero: " << cas.getEndereco().numero << endl;
+        cout << "Número: " << cas.getEndereco().numero << endl;
         cout << "CEP: " << cas.getEndereco().cep << endl;
         cout << "Bairro: " << cas.getEndereco().bairro << endl;
         cout << "Cidade: " << cas.getEndereco().cidade << endl;
@@ -97,22 +99,22 @@ void SistemaImobiliaria::ImprimeCasa(Casa cas, int num)
 void SistemaImobiliaria::ImprimeApartamento(Apartamento apt, int num)
 {
         cout << num << ": " << apt.getTitulo() << "\n" <<endl;
-        cout << "DescriÃ§Ã£o: " << apt.getDescricao() << endl;
+        cout << "Descrição: " << apt.getDescricao() << endl;
         cout << "Valor: " << apt.getValor() << endl;
         if(apt.getAouV()){
-        cout << "DisponÃ­vel para venda" << endl;
+        cout << "Disponível para venda" << endl;
         }else{
-        cout << "DisponÃ­vel para aluguel" << endl;
+        cout << "Disponível para aluguel" << endl;
         }
-        cout << "Ãrea: " << apt.area << endl;
+        cout << "Área: " << apt.area << endl;
         cout << "Andar: " << apt.andar << endl;
-        cout << "NÃºmero de vagas na garagem: " << apt.nvagasgaragem << endl;
-        cout << "NÃºmero de quartos: " << apt.nquartos << endl;
-        cout << "PosiÃ§Ã£o do apartamento: " << apt.posicao << endl;
+        cout << "Número de vagas na garagem: " << apt.nvagasgaragem << endl;
+        cout << "Número de quartos: " << apt.nquartos << endl;
+        cout << "Posição do apartamento: " << apt.posicao << endl;
 
         cout << "   Endereco:" << endl;
         cout << "Rua: " << apt.getEndereco().rua << endl;
-        cout << "NÃºmero: " << apt.getEndereco().numero << endl;
+        cout << "Número: " << apt.getEndereco().numero << endl;
         cout << "CEP: " << apt.getEndereco().cep << endl;
         cout << "Bairro: " << apt.getEndereco().bairro << endl;
         cout << "Cidade: " << apt.getEndereco().cidade << endl;
@@ -202,7 +204,7 @@ void SistemaImobiliaria::mostraPorTipo(int tipo)
         break;
 
         default:
-        cout << "OpÃ§Ã£o invÃ¡lida!" << endl;
+        cout << "Opção inválida!" << endl;
     }
 }
 

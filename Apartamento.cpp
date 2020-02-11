@@ -1,16 +1,17 @@
 #include "Apartamento.h"
 #include <string>
+#include <vector>
 using namespace std;
 
 Apartamento::Apartamento()
 {
     this->area = 0.0;
     this->nquartos = 0;
-    this->posicao = "NÃ£o configurada";
+    this->posicao = "Não configurada";
     this->andar = 0;
     this->valor = 0.0;
     this->nvagasgaragem = 0;
-    disponivel = 1;
+    this->disponivel = 1;
 }
 
 Apartamento::Apartamento(double AREA, int NQUARTOS, string POSICAO, int ANDAR, double VALOR, int NVAGASGARAGEM, Endereco ENDE)
@@ -22,5 +23,5 @@ Apartamento::Apartamento(double AREA, int NQUARTOS, string POSICAO, int ANDAR, d
     this->valor = VALOR;
     this->nvagasgaragem = NVAGASGARAGEM;
     this->endereco = ENDE;
-    disponivel = 1;
+    this->disponivel = 0;
 }
