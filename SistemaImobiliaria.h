@@ -32,6 +32,7 @@ class SistemaImobiliaria
         void buscaImovelTit(string busca);
         void buscaImovelBai(string busca);
         void buscaImovelCid(string busca);
+        void buscaImovelPreco(int minimo, int maximo);
 
     protected:
 
