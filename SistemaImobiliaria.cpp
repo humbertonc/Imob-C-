@@ -411,3 +411,56 @@ void SistemaImobiliaria::buscaImovelCid(string busca)
         ImprimeApartamento(apartamentos[i], i + 1);
     }
 }
+
+void SistemaImobiliaria::buscaImovelPreco(int minimo, int maximo)
+{
+    int i;
+
+    cout << "========= TERRENOS ========" << endl;
+    cout << endl;
+
+    for(i = 0; i < 100; i++)
+    {
+
+        if(terrenos[i].getValor() < minimo && minimo != 0){
+            continue;
+        }
+        if(terrenos[i].getValor() > maximo && maximo != 0){
+            continue;
+        }
+
+        ImprimeTerreno(terrenos[i], i + 1);
+    }
+
+    cout << "========= CASAS ========" << endl;
+    cout << endl;
+
+    for(i = 0; i < 100; i++)
+    {
+
+        if(casas[i].getValor() < minimo && minimo != 0){
+            continue;
+        }
+        if(casas[i].getValor() > maximo && maximo != 0){
+            continue;
+        }
+
+        ImprimeCasa(casas[i], i + 1);
+    }
+
+    cout << "========= APARTAMENTOS ========" << endl;
+    cout << endl;
+
+    for(i = 0; i < 100; i++)
+    {
+
+        if(apartamentos[i].getValor() < minimo && minimo != 0){
+            continue;
+        }
+        if(apartamentos[i].getValor() > maximo && maximo != 0){
+            continue;
+        }
+
+        ImprimeApartamento(apartamentos[i], i + 1);
+    }
+}
