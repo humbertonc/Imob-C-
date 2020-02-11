@@ -10,9 +10,9 @@ SistemaImobiliaria::SistemaImobiliaria()
     int i;
 
     for(i = 0; i < 100; i++){
-        terrenos[i].disponivel = 0;
-        casas[i].disponivel = 0;
-        apartamentos[i].disponivel = 0;
+        terrenos[i].disponivel = 1;
+        casas[i].disponivel = 1;
+        apartamentos[i].disponivel = 1;
     }
 }
 
