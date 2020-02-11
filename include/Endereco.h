@@ -1,7 +1,7 @@
 #ifndef ENDERECO_H
 #define ENDERECO_H
 #include "string"
-
+#include <vector>
 using namespace std;
 
 class Endereco
@@ -24,8 +24,8 @@ class Endereco
         void setValor(double);
         string getAouV();
         void setAouV(string);
-        string getTitulo;
-        void setTitulo();
+        string getTitulo();
+        void setTitulo(string);
         string rua;
         int numero;
         string bairro;

@@ -39,39 +39,46 @@
 	"Terreno.h"
 	<string>
 
-1580996786 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\apartamento.cpp
+1581387577 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\apartamento.cpp
 	"Apartamento.h"
 	<string>
+	<vector>
 
-1580996116 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\apartamento.h
+1581387577 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\apartamento.h
 	<Imovel.h>
 	<string>
+	<vector>
 
-1580999459 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\imovel.h
+1581387577 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\imovel.h
 	"Endereco.h"
 	<string>
+	<vector>
 
-1580996858 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\casa.cpp
+1581387577 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\casa.cpp
 	"Casa.h"
 	<string>
+	<vector>
 
-1580925212 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\casa.h
+1581387577 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\casa.h
 	<Imovel.h>
 	<string>
+	<vector>
 
-1580921021 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\imovel.cpp
+1581387577 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\imovel.cpp
 	"Imovel.h"
-	"string"
+	<vector>
 
-1580921021 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\terreno.cpp
+1581387577 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\terreno.cpp
 	"Terreno.h"
 	<string>
+	<vector>
 
-1580996085 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\terreno.h
+1581387577 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\terreno.h
 	<Imovel.h>
 	<string>
+	<vector>
 
-1580925192 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\main.cpp
+1581389757 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\main.cpp
 	<iostream>
 	<string>
 	<Imovel.h>
@@ -80,11 +87,31 @@
 	<Apartamento.h>
 	<locale.h>
 	<Endereco.h>
+	<SistemaImobiliaria.h>
+	<vector>
 
-1580999029 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\endereco.h
+1581389673 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\endereco.h
 	"string"
+	<vector>
 
-1580998641 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\endereco.cpp
+1581387577 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\endereco.cpp
 	"Endereco.h"
 	<string>
+	<vector>
+
+1581387577 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\src\sistemaimobiliaria.cpp
+	"SistemaImobiliaria.h"
+	<iostream>
+	"stdio.h"
+	<string>
+	<algorithm>
+	<vector>
+
+1581391505 c:\users\edgelson\desktop\p2\derzu\projeto 2\include\sistemaimobiliaria.h
+	"Imovel.h"
+	"Casa.h"
+	"Terreno.h"
+	"Apartamento.h"
+	<string>
+	<vector>
 

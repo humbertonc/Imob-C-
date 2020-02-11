@@ -2,7 +2,7 @@
 #define TERRENO_H
 #include <Imovel.h>
 #include <string>
-
+#include <vector>
 using namespace std;
 
 class Terreno : public Imovel

@@ -2,9 +2,11 @@
 #define IMOVEL_H
 #include "Endereco.h"
 #include <string>
+#include <vector>
 
 using namespace std;
-class Imovel{
+class Imovel
+{
     public:
         Imovel();
 
@@ -15,7 +17,7 @@ class Imovel{
         string getDescricao();
         string getTitulo();
 
-        void setAouv(bool Aouv);
+        void setAouV(bool Aouv);
         void setValor(double val);
         void setEndereco(Endereco ende);
         void setTipo(int tip);

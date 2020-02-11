@@ -2,7 +2,7 @@
 #define CASA_H
 #include <Imovel.h>
 #include <string>
-
+#include <vector>
 using namespace std;
 
 class Casa : public Imovel

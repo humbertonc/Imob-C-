@@ -1,5 +1,6 @@
 #include "Casa.h"
 #include <string>
+#include <vector>
 using namespace std;
 
 Casa::Casa()

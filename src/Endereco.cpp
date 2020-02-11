@@ -1,5 +1,6 @@
 #include "Endereco.h"
 #include <string>
+#include <vector>
 using namespace std;
 
 Endereco::Endereco()
