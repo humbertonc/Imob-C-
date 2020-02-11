@@ -5,7 +5,7 @@ Imovel::Imovel()
     //ctor
 }
 
-int Imovel::getAouV()
+bool Imovel::getAouV()
 {
     return aouv;
 }
@@ -25,14 +25,19 @@ string Imovel::getDescricao()
     return descricao;
 }
 
+string Imovel::getTitulo()
+{
+    return titulo;
+}
+
 int Imovel::getTipo()
 {
     return tipoImovel;
 }
 
-void Imovel::setAouv(int Aouv)
+void Imovel::setAouV(bool AouV)
 {
-    aouv = Aouv;
+    aouv = AouV;
 }
 
 void Imovel::setEndereco(Endereco ende)
@@ -53,4 +58,9 @@ void Imovel::setValor(double val)
 void Imovel::setTipo(int tip)
 {
     tipoImovel = tip;
+}
+
+void Imovel::setTitulo(string titu)
+{
+    titulo = titu;
 }
