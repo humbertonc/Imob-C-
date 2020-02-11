@@ -2,7 +2,7 @@
 #define CASA_H
 #include <Imovel.h>
 #include <string>
-
+#include <vector>
 using namespace std;
 
 class Casa : public Imovel
@@ -13,6 +13,7 @@ class Casa : public Imovel
         int numPavimen, numQuartos;
         double areaConst, areaTer;
         Endereco endereco;
+        int disponivel;
     protected:
 
     private:

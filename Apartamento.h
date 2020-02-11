@@ -2,6 +2,7 @@
 #define APARTAMENTO_H
 #include <Imovel.h>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -14,8 +15,10 @@ class Apartamento : public Imovel
         int nquartos;
         string posicao;
         int andar;
+        double valor;
         int nvagasgaragem;
         Endereco endereco;
+        int disponivel;
 };
 
 #endif // APARTAMENTO_H

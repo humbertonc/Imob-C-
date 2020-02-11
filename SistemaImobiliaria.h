@@ -5,7 +5,7 @@
 #include "Terreno.h"
 #include "Apartamento.h"
 #include <string>
-
+#include <vector>
 using namespace std;
 
 class SistemaImobiliaria
@@ -13,9 +13,9 @@ class SistemaImobiliaria
     public:
         SistemaImobiliaria();
 
-        Casa casas[100];
-        Terreno terrenos[100];
-        Apartamento apartamentos[100];
+        vector<Casa> casas;
+        vector<Terreno> terrenos;
+        vector<Apartamento> apartamentos;
 
         void cadastraTerreno(Terreno ter);
         void cadastraCasa(Casa cas);
