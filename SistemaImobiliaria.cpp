@@ -18,54 +18,26 @@ SistemaImobiliaria::SistemaImobiliaria()
     }
 }
 
-void SistemaImobiliaria::cadastraTerreno(Terreno ter)
+void SistemaImobiliaria::cadastraImovel(Imovel *iv)
 {
-    int i;
-
-    for(i = 0; terrenos[i].disponivel && i < 100; i++){
-        terrenos[i] = ter;
-        terrenos[i].disponivel = 0;
-        break;
-    }
-}
-
-void SistemaImobiliaria::cadastraCasa(Casa cas)
-{
-    int i;
-
-    for(i = 0; casas[i].disponivel && i < 100; i++){
-            casas[i] = cas;
-            casas[i].disponivel = 0;
-            break;
-    }
-}
-
-void SistemaImobiliaria::cadastraApt(Apartamento apt)
-{
-     int i;
-
-     for(i = 0; apartamentos[i].disponivel && i < 100; i++){
-        apartamentos[i] = apt;
-        apartamentos[i].disponivel = 0;
-        break;
-    }
+    imovs.push_back(*iv);
 }
 
 void SistemaImobiliaria::ImprimeTerreno(Terreno ter, int num)
 {
         cout << num << ": " << ter.getTitulo() << "\n" <<endl;
-        cout << "Descrição: " << ter.getDescricao() << endl;
+        cout << "DescriÃ§Ã£o: " << ter.getDescricao() << endl;
         cout << "Valor: " << ter.getValor() << endl;
         if(ter.getAouV()){
-        cout << "Disponível para venda" << endl;
+        cout << "DisponÃ­vel para venda" << endl;
         }else{
-        cout << "Disponível para aluguel" << endl;
+        cout << "DisponÃ­vel para aluguel" << endl;
         }
-        cout << "Área: " << ter.area << endl;
+        cout << "Ãrea: " << ter.area << endl;
 
         cout << "   Endereco:" << endl;
         cout << "Rua: " << ter.getEndereco().rua << endl;
-        cout << "Número: " << ter.getEndereco().numero << endl;
+        cout << "NÃºmero: " << ter.getEndereco().numero << endl;
         cout << "CEP: " << ter.getEndereco().cep << endl;
         cout << "Bairro: " << ter.getEndereco().bairro << endl;
         cout << "Cidade: " << ter.getEndereco().cidade << endl;
@@ -75,21 +47,21 @@ void SistemaImobiliaria::ImprimeTerreno(Terreno ter, int num)
 void SistemaImobiliaria::ImprimeCasa(Casa cas, int num)
 {
         cout << num << ": " << cas.getTitulo() << "\n" <<endl;
-        cout << "Descrição: " << cas.getDescricao() << endl;
+        cout << "DescriÃ§Ã£o: " << cas.getDescricao() << endl;
         cout << "Valor: " << cas.getValor() << endl;
         if(cas.getAouV()){
-        cout << "Disponível para venda" << endl;
+        cout << "DisponÃ­vel para venda" << endl;
         }else{
-        cout << "Disponível para aluguel" << endl;
+        cout << "DisponÃ­vel para aluguel" << endl;
         }
-        cout << "Área do terreno: " << cas.areaTer << endl;
-        cout << "Área construída: " << cas.areaConst << endl;
-        cout << "Número de pavimentos: " << cas.numPavimen << endl;
-        cout << "Número de quartos: " << cas.numQuartos << endl;
+        cout << "Ãrea do terreno: " << cas.areaTer << endl;
+        cout << "Ãrea construÃ­da: " << cas.areaConst << endl;
+        cout << "NÃºmero de pavimentos: " << cas.numPavimen << endl;
+        cout << "NÃºmero de quartos: " << cas.numQuartos << endl;
 
         cout << "   Endereco:" << endl;
         cout << "Rua: " << cas.getEndereco().rua << endl;
-        cout << "Número: " << cas.getEndereco().numero << endl;
+        cout << "NÃºmero: " << cas.getEndereco().numero << endl;
         cout << "CEP: " << cas.getEndereco().cep << endl;
         cout << "Bairro: " << cas.getEndereco().bairro << endl;
         cout << "Cidade: " << cas.getEndereco().cidade << endl;
@@ -99,22 +71,22 @@ void SistemaImobiliaria::ImprimeCasa(Casa cas, int num)
 void SistemaImobiliaria::ImprimeApartamento(Apartamento apt, int num)
 {
         cout << num << ": " << apt.getTitulo() << "\n" <<endl;
-        cout << "Descrição: " << apt.getDescricao() << endl;
+        cout << "DescriÃ§Ã£o: " << apt.getDescricao() << endl;
         cout << "Valor: " << apt.getValor() << endl;
         if(apt.getAouV()){
-        cout << "Disponível para venda" << endl;
+        cout << "DisponÃ­vel para venda" << endl;
         }else{
-        cout << "Disponível para aluguel" << endl;
+        cout << "DisponÃ­vel para aluguel" << endl;
         }
-        cout << "Área: " << apt.area << endl;
+        cout << "Ãrea: " << apt.area << endl;
         cout << "Andar: " << apt.andar << endl;
-        cout << "Número de vagas na garagem: " << apt.nvagasgaragem << endl;
-        cout << "Número de quartos: " << apt.nquartos << endl;
-        cout << "Posição do apartamento: " << apt.posicao << endl;
+        cout << "NÃºmero de vagas na garagem: " << apt.nvagasgaragem << endl;
+        cout << "NÃºmero de quartos: " << apt.nquartos << endl;
+        cout << "PosiÃ§Ã£o do apartamento: " << apt.posicao << endl;
 
         cout << "   Endereco:" << endl;
         cout << "Rua: " << apt.getEndereco().rua << endl;
-        cout << "Número: " << apt.getEndereco().numero << endl;
+        cout << "NÃºmero: " << apt.getEndereco().numero << endl;
         cout << "CEP: " << apt.getEndereco().cep << endl;
         cout << "Bairro: " << apt.getEndereco().bairro << endl;
         cout << "Cidade: " << apt.getEndereco().cidade << endl;
@@ -123,71 +95,73 @@ void SistemaImobiliaria::ImprimeApartamento(Apartamento apt, int num)
 
 void SistemaImobiliaria::mostraTodos()
 {
-    int i;
+    int i, j = 1;
 
     cout << "========= TERRENOS ========" << endl;
     cout << endl;
-    for(i = 0; i < 100; i++){
-        if(!terrenos[i].disponivel){
+    for(i = 0; imovs.size(); i++){
+        if(!imovs[i].disponivel || imovs[i].getTipo() != 1){
             continue;
         }
-        ImprimeTerreno(terrenos[i], i + 1);
+        ImprimeTerreno(imovs[i], j);
+        j++;
     }
 
     cout << "========= CASAS ========" << endl;
     cout << endl;
-
+    j = 1;
     for(i = 0; i < 100; i++){
-        if(!casas[i].disponivel){
+        if(!imovs[i].disponivel || imovs[i].getTipo() != 2){
             continue;
         }
 
-        ImprimeCasa(casas[i], i + 1);
+        ImprimeCasa(imovs[i], j + 1);
+        j++;
     }
 
     cout << "========= APARTAMENTOS ========" << endl;
     cout << endl;
-
+    j = 1;
     for(i = 0; i < 100; i++){
-        if(!apartamentos[i].disponivel){
+        if(!imovs[i].disponivel || imovs[i].getTipo() != 3){
             continue;
         }
 
-        ImprimeApartamento(apartamentos[i], i + 1);
+        ImprimeApartamento(imovs[i], j + 1);
+        j++;
     }
 }
 
 void SistemaImobiliaria::mostraPorTipo(int tipo)
 {
-    int i;
+    int i, j = 1;
 
     switch(tipo){
         case 1:
         cout << "========= TERRENOS ========" << endl;
         cout << endl;
-        for(i = 0; i < 100; i++){
-            if(!terrenos[i].disponivel){
-            continue;
+        for(i = 0; imovs.size(); i++){
+            if(!imovs[i].disponivel || imovs[i].getTipo() != 1){
+                continue;
             }
-
-            ImprimeTerreno(terrenos[i], i + 1);
-
+            ImprimeTerreno(imovs[i], j);
+            j++;
         }
         break;
 
         case 2:
-
+    
         cout << "========= CASAS ========" << endl;
         cout << endl;
 
         for(i = 0; i < 100; i++){
-            if(!casas[i].disponivel){
+        if(!imovs[i].disponivel || imovs[i].getTipo() != 2){
             continue;
-            }
-
-            ImprimeCasa(casas[i], i + 1);
         }
-        break;
+
+        ImprimeCasa(imovs[i], j + 1);
+        j++;
+        }
 
         case 3:
 
@@ -195,274 +169,295 @@ void SistemaImobiliaria::mostraPorTipo(int tipo)
         cout << endl;
 
         for(i = 0; i < 100; i++){
-            if(!apartamentos[i].disponivel){
-            continue;
+            if(!imovs[i].disponivel || imovs[i].getTipo() != 3){
+                continue;
             }
 
-            ImprimeApartamento(apartamentos[i], i + 1);
+            ImprimeApartamento(imovs[i], j + 1);
+            j++;
         }
-        break;
 
         default:
-        cout << "Opção inválida!" << endl;
+        cout << "OpÃ§Ã£o invÃ¡lida!" << endl;
     }
 }
 
 void SistemaImobiliaria::mostraAouV(bool seletor)
 {
-    int i;
+    int i, j = 1;
 
     cout << "========= TERRENOS ========" << endl;
     cout << endl;
-    for(i = 0; i < 100; i++){
-        if(!terrenos[i].disponivel && (seletor != terrenos[i].getAouV())){
-            continue;
-        }
-
-        ImprimeTerreno(terrenos[i], i + 1);
-
+    for(i = 0; imovs.size(); i++){
+            if((!imovs[i].disponivel || imovs[i].getTipo() != 1) && (imovs[i].getAouV() != seletor)){
+                continue;
+            }
+            ImprimeTerreno(imovs[i], j);
+            j++;
     }
+
 
     cout << "========= CASAS ========" << endl;
     cout << endl;
-
-    for(i = 0; i < 100; i++){
-        if(!casas[i].disponivel && (seletor != casas[i].getAouV())){
-            continue;
-        }
-
-        ImprimeCasa(casas[i], i + 1);
+    
+    j = 1;
+    
+    for(i = 0; imovs.size(); i++){
+            if((!imovs[i].disponivel || imovs[i].getTipo() != 2) && (imovs[i].getAouV() != seletor)){
+                continue;
+            }
+            ImprimeCasa(imovs[i], j);
+            j++;
     }
 
     cout << "========= APARTAMENTOS ========" << endl;
     cout << endl;
-
-    for(i = 0; i < 100; i++){
-        if(!apartamentos[i].disponivel && (seletor != apartamentos[i].getAouV())){
-            continue;
-        }
-
-        ImprimeApartamento(apartamentos[i], i + 1);
+    j = 1;
+    for(i = 0; imovs.size(); i++){
+            if((!imovs[i].disponivel || imovs[i].getTipo() != 3) && (imovs[i].getAouV() != seletor)){
+                continue;
+            }
+            ImprimeApartamento(imovs[i], j);
+            j++;
     }
 }
 
 void SistemaImobiliaria::buscaImovelTit(string busca)
 {
     string minuscula;
-    int i;
+    int i, j = 1;
 
     transform(busca.begin(), busca.end(), busca.begin(), ::tolower);
 
     cout << "========= TERRENOS ========" << endl;
     cout << endl;
 
-    for(i = 0; i < 100; i++)
+    for(i = 0; imovs.size(); i++)
     {
 
-        minuscula = terrenos[i].getTitulo();
+        minuscula = imovs[i].getTitulo();
         transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
 
-        if(minuscula.find(busca) == -1){
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 1){
             continue;
         }
 
-        ImprimeTerreno(terrenos[i], i + 1);
+        ImprimeTerreno(imovs[i], j);
+        j++;
     }
 
     cout << "========= CASAS ========" << endl;
     cout << endl;
-
-    for(i = 0; i < 100; i++)
+    j = 1;
+    for(i = 0; imovs.size(); i++)
     {
 
-        minuscula = casas[i].getTitulo();
+        minuscula = imovs[i].getTitulo();
         transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
 
-        if(minuscula.find(busca) == -1){
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 2){
             continue;
         }
 
-        ImprimeCasa(casas[i], i + 1);
+        ImprimeCasa(imovs[i], j);
+        j++;
     }
 
     cout << "========= APARTAMENTOS ========" << endl;
     cout << endl;
-
-    for(i = 0; i < 100; i++)
+    j = 1;
+    for(i = 0; imovs.size(); i++)
     {
 
-        minuscula = apartamentos[i].getTitulo();
+        minuscula = imovs[i].getTitulo();
         transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
 
-        if(minuscula.find(busca) == -1){
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 3){
             continue;
         }
 
-        ImprimeApartamento(apartamentos[i], i + 1);
+        ImprimeApartamento(imovs[i], j);
+        j++;
     }
 }
 
 void SistemaImobiliaria::buscaImovelBai(string busca)
 {
     string minuscula;
-    int i;
+    int i, j = 1;
 
     transform(busca.begin(), busca.end(), busca.begin(), ::tolower);
 
     cout << "========= TERRENOS ========" << endl;
     cout << endl;
 
-    for(i = 0; i < 100; i++)
+    for(i = 0; imovs.size(); i++)
     {
 
-        minuscula = terrenos[i].getEndereco().bairro;
+        minuscula = imovs[i].getEndereco().bairro;
         transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
 
-        if(minuscula.find(busca) == -1){
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 1){
             continue;
         }
 
-        ImprimeTerreno(terrenos[i], i + 1);
+        ImprimeTerreno(imovs[i], j);
+        j++
     }
-
     cout << "========= CASAS ========" << endl;
     cout << endl;
-
-    for(i = 0; i < 100; i++)
+    j = 1;
+    for(i = 0; imovs.size(); i++)
     {
 
-        minuscula = casas[i].getEndereco().bairro;
+        minuscula = imovs[i].getEndereco().bairro;
         transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
 
-        if(minuscula.find(busca) == -1){
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 2){
             continue;
         }
 
-        ImprimeCasa(casas[i], i + 1);
+        ImprimeCasa(imovs[i], j);
+        j++;
     }
 
     cout << "========= APARTAMENTOS ========" << endl;
     cout << endl;
 
-    for(i = 0; i < 100; i++)
+    j = 1;
+    for(i = 0; imovs.size(); i++)
     {
 
-        minuscula = apartamentos[i].getEndereco().bairro;
+        minuscula = imovs[i].getEndereco().bairro;
         transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
 
-        if(minuscula.find(busca) == -1){
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 3){
             continue;
         }
 
-        ImprimeApartamento(apartamentos[i], i + 1);
+        ImprimeApartamento(imovs[i], j);
+        j++;
     }
 }
 
 void SistemaImobiliaria::buscaImovelCid(string busca)
 {
     string minuscula;
-    int i;
+    int i, j = 1;
 
     transform(busca.begin(), busca.end(), busca.begin(), ::tolower);
 
     cout << "========= TERRENOS ========" << endl;
     cout << endl;
 
-    for(i = 0; i < 100; i++)
+    for(i = 0; imovs.size(); i++)
     {
 
-        minuscula = terrenos[i].getEndereco().cidade;
+        minuscula = imovs[i].getEndereco().cidade;
         transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
 
-        if(minuscula.find(busca) == -1){
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 1){
             continue;
         }
 
-        ImprimeTerreno(terrenos[i], i + 1);
+        ImprimeTerreno(imovs[i], j);
+        j++
     }
 
     cout << "========= CASAS ========" << endl;
     cout << endl;
-
-    for(i = 0; i < 100; i++)
+    j = 1;
+    for(i = 0; imovs.size(); i++)
     {
 
-        minuscula = casas[i].getEndereco().cidade;
+        minuscula = imovs[i].getEndereco().cidade;
         transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
 
-        if(minuscula.find(busca) == -1){
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 2){
             continue;
         }
 
-        ImprimeCasa(casas[i], i + 1);
+        ImprimeCasa(imovs[i], j);
+        j++
     }
 
     cout << "========= APARTAMENTOS ========" << endl;
     cout << endl;
-
-    for(i = 0; i < 100; i++)
+    j++;
+    for(i = 0; imovs.size(); i++)
     {
 
-        minuscula = apartamentos[i].getEndereco().cidade;
+        minuscula = imovs[i].getEndereco().cidade;
         transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
 
-        if(minuscula.find(busca) == -1){
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 3){
             continue;
         }
 
-        ImprimeApartamento(apartamentos[i], i + 1);
+        ImprimeApartamento(imovs[i], j);
+        j++
     }
 }
 
 void SistemaImobiliaria::buscaImovelPreco(int minimo, int maximo)
 {
-    int i;
+    int i, j = 1;
 
     cout << "========= TERRENOS ========" << endl;
     cout << endl;
 
-    for(i = 0; i < 100; i++)
+    for(i = 0; imovs.size(); i++)
     {
-
-        if(terrenos[i].getValor() < minimo && minimo != 0){
+        if(!imovs[i].disponivel || imovs[i].getTipo() != 1){
             continue;
         }
-        if(terrenos[i].getValor() > maximo && maximo != 0){
+        if(imovs[i].getValor() < minimo && minimo != 0){
+            continue;
+        }
+        if(imovs[i].getValor() > maximo && maximo != 0){
             continue;
         }
 
-        ImprimeTerreno(terrenos[i], i + 1);
+        ImprimeTerreno(imovs[i],j);
+        j++;
     }
 
     cout << "========= CASAS ========" << endl;
     cout << endl;
-
-    for(i = 0; i < 100; i++)
+    j = 1;
+    for(i = 0; imovs.size(); i++)
     {
-
-        if(casas[i].getValor() < minimo && minimo != 0){
+        if(!imovs[i].disponivel || imovs[i].getTipo() != 2){
             continue;
         }
-        if(casas[i].getValor() > maximo && maximo != 0){
+        if(imovs[i].getValor() < minimo && minimo != 0){
+            continue;
+        }
+        if(imovs[i].getValor() > maximo && maximo != 0){
             continue;
         }
 
-        ImprimeCasa(casas[i], i + 1);
+        ImprimeCasa(imovs[i],j);
+        j++;
     }
 
     cout << "========= APARTAMENTOS ========" << endl;
     cout << endl;
 
-    for(i = 0; i < 100; i++)
+    j = 1;
+    for(i = 0; imovs.size(); i++)
     {
-
-        if(apartamentos[i].getValor() < minimo && minimo != 0){
+        if(!imovs[i].disponivel || imovs[i].getTipo() != 3){
             continue;
         }
-        if(apartamentos[i].getValor() > maximo && maximo != 0){
+        if(imovs[i].getValor() < minimo && minimo != 0){
+            continue;
+        }
+        if(imovs[i].getValor() > maximo && maximo != 0){
             continue;
         }
 
-        ImprimeApartamento(apartamentos[i], i + 1);
+        ImprimeApartamento(imovs[i],j);
+        j++;
     }
 }
