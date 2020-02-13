@@ -13,13 +13,9 @@ class SistemaImobiliaria
     public:
         SistemaImobiliaria();
 
-        vector<Casa> casas;
-        vector<Terreno> terrenos;
-        vector<Apartamento> apartamentos;
+        vector<Imovel*> imovs;
 
-        void cadastraTerreno(Terreno ter);
-        void cadastraCasa(Casa cas);
-        void cadastraApt(Apartamento apt);
+        void cadastraImovel(Imovel *iv);
 
         void ImprimeTerreno(Terreno ter, int num);
         void ImprimeCasa(Casa cas, int num);
