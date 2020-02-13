@@ -23,6 +23,120 @@ void SistemaImobiliaria::cadastraImovel(Imovel *iv)
     imovs.push_back(*iv);
 }
 
+void SistemaImobiliaria::removeImovel(string busca)
+{
+    int i, j = 1, iterator, continuadas = 0;
+    string minuscula;
+    
+    transform(busca.begin(), busca.end(), busca.begin(), ::tolower);
+
+    for(i = 0; imovs.size(); i++)
+    {
+        
+        minuscula = imovs[i].getTitulo();
+        transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
+
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel){
+            continuadas++;
+            continue;
+        }
+        
+        switch(imovs[i].getTipo()){
+        case 1:
+        cout << "Tipo: Terreno" << endl;
+        ImprimeTerreno(imovs[i], j);
+        break;
+        case 2:
+        cout << "Tipo: Casa" << endl;
+        ImprimeCasa(imovs[i], j);
+        break;
+        case 3:
+        cout << "Tipo: Apartamento" << endl;
+        ImprimeApartamento(imovs[i], j);
+        break;
+        }
+        
+        j++;
+    }
+    
+    cout << "\n\n" << endl;
+    cout << "Digite o número do imóvel a ser removido" << endl;
+    cin >> iterator;
+    iterator--;
+    
+    imovs.erase(iterator);
+    
+    cout << "Imóvel removido com sucesso!" << endl;
+}
+
+void SistemaImobiliaria::atualizaImovel(string busca)
+{
+    int i, j = 1, iterator;
+    string minuscula;
+    
+        transform(busca.begin(), busca.end(), busca.begin(), ::tolower);
+
+    cout << "========= TERRENOS ========" << endl;
+    cout << endl;
+
+    for(i = 0; imovs.size(); i++)
+    {
+
+        minuscula = imovs[i].getTitulo();
+        transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
+
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 1){
+            continue;
+        }
+
+        ImprimeTerreno(imovs[i], j);
+        j++;
+    }
+
+    cout << "========= CASAS ========" << endl;
+    cout << endl;
+    j = 1;
+    for(i = 0; imovs.size(); i++)
+    {
+
+        minuscula = imovs[i].getTitulo();
+        transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
+
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 2){
+            continue;
+        }
+
+        ImprimeCasa(imovs[i], j);
+        j++;
+    }
+
+    cout << "========= APARTAMENTOS ========" << endl;
+    cout << endl;
+    j = 1;
+    for(i = 0; imovs.size(); i++)
+    {
+
+        minuscula = imovs[i].getTitulo();
+        transform(minuscula.begin(), minuscula.end(), minuscula.begin(), ::tolower);
+
+        if(minuscula.find(busca) == -1 || !imovs[i].disponivel || imovs[i].getTipo() != 3){
+            continue;
+        }
+
+        ImprimeApartamento(imovs[i], j);
+        j++;
+    }
+    
+    cout << "\n\n" << endl;
+    cout << "Digite o número do imóvel a ser atualizado" << endl;
+    cin >> iterator;
+    iterator--;
+    
+    imovs.erase(iterator);
+    
+    cout << "Imóvel atualizado com sucesso!" << endl;
+}
+
 void SistemaImobiliaria::ImprimeTerreno(Terreno ter, int num)
 {
         cout << num << ": " << ter.getTitulo() << "\n" <<endl;
