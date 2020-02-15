@@ -23,29 +23,9 @@ Casa::Casa(int NUMPAVIMEN, int NUMQUARTOS, double AREACONST, double AREATER, End
     disponivel = 0;
 }
 
-
-
-
-
-
-
-
-
 void Casa::setNUMPAVIMEN(int PAVIMEN){
     this->numPavimen = PAVIMEN;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 void Casa::setNUMQUARTOS(int NUMQUARTOS){
     this->numQuartos = NUMQUARTOS;
@@ -63,14 +43,14 @@ int Casa::getNUMPAVIMEN(){
     return this->numPavimen;
 }
 
-int Casa::setNUMQUARTOS(){
+int Casa::getNUMQUARTOS(){
     return this->numQuartos;
 }
 
-int Casa::setAREACONST(){
+int Casa::getAREACONST(){
     return this->areaConst;
 }
 
-int Casa::setAREATER(){
+int Casa::getAREATER(){
     return this->areaTer;
 }
