@@ -140,39 +140,34 @@ setlocale(LC_ALL, "Portuguese");
                         {
                          cout <<("Por favor, digite as informações referentes ao apartamento.\n\n");
                         Apartamento ap1 = Apartamento();
-                        cout <<("Título do anúncio do apartamento:");
+                        cout <<("Título do anúncio do apartamento: \n");
                         string vardescricao3;
                         cin >> vardescricao3;
                         ap1.setDescricao(vardescricao3);
-
-                        //areadoapartamento
+                        cout <<("Área do apartamento: \n");
                         double varareaapartamento;
                         cin >> varareaapartamento;
-
-                        //numeroquartos
+                        ap1.area = varareaapartamento;
+                        cout <<("Número de quartos do apartamento: \n");
                         int varnumeroquartos;
                         cin >> varnumeroquartos;
-
-                        //posicao
-                        int varposicao;
+                        ap1.nquartos = varnumeroquartos;
+                        cout <<("Posicao do apartamento: \n");
+                        string varposicao;
                         cin >> varposicao;
-
-                        //andar
+                        ap1.posicao = varposicao;
+                        cout <<("Andar do apartamento: \n");
                         int varandar;
                         cin >> varandar;
-
-                        //valor do condominio
+                        ap1.andar = varandar;
+                        cout <<("Valor do condomínio: \n");
                         double varvalorcondominio;
                         cin >> varvalorcondominio;
-
-                        //numero de vagas garagem
+                        ap1.valor = varvalorcondominio;
+                        cout <<("Número de vagas na garagem: \n");
                         int varnumerovagasgaragemapt;
                         cin >> varnumerovagasgaragemapt;
-
-                        cout <<("Valor do apartamento:\n");
-                        double varvalor3;
-                        cin >> varvalor3;
-                        ap1.setValor(varvalor3);
+                        ap1.nvagasgaragem = varnumerovagasgaragemapt;
                         cout <<("O apartamento está para aluguel(true), ou para venda(false)?");
                         bool varaouv3;
                         cin >> varaouv3;
