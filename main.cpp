@@ -19,15 +19,16 @@ setlocale(LC_ALL, "Portuguese");
   for(i=0;i<100;i++){
     cout <<("Seja bem-vindo ao nosso sistema de imobiliária!");
     cout << ("1. Criar Imóvel ");
-    cout << ("2. Editar Imóvel ");
-    cout << ("3. Visualizar Imóvel ");
-    cout << ("4. Deletar Imóvel ");
-    cout << ("5. Sair ");
+    cout << ("2. Buscar Imóvel ");
+    cout << ("3. Listar Imóvel ");
+    cout << ("4. Editar Imóvel ");
+    cout << ("5. Deletar Imóvel ");
+    cout << ("6. Sair ");
 
     int menu;
     cin >> menu;
         switch(menu){
-            case 1:
+            case 1:{//Criar
                 cout << "1. Criar terreno" << endl;
                 cout << "2. Criar casa" << endl;
                 cout << "3. Criar apartamento" << endl;
@@ -213,7 +214,77 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                         }
                     }
-    return 0;
-        }
+            }
+            case 2:{//Buscar
+                cout << ("1. Buscar imóvel por título: \n");
+                cout << ("2. Buscar imóvel por bairro: \n");
+                cout << ("3. Buscar imóvel por cidade: \n");
+                cout << ("4. Buscar por preco de imóvel: \n");
+                int opcao;
+                cin >> opcao;
+                switch(opcao){
+                    case 1:{
+                        string busca;
+                        cin >> busca;
+                        buscaImovelTit(string busca);
+                    }
+                    case 2:{
+                        string busca;
+                        cin >> busca;
+                        buscaImovelBai(string busca);
+                    }
+                    case 3:{
+                        string busca;
+                        cin >> busca;
+                        buscaImovelCid(string busca);
+                    }
+                    case 4:{
+                        int minimo;
+                        int maximo;
+                        cin >> minimo;
+                        cin >> maximo;
+                        buscaImovelPreco(int minimo, int maximo);
+                    }
+                }
+            }
+            case 3:{//Listar
+                cout << "1. Visualizar todos os imóveis: \n";
+                cout << "2. Visualizar os imóveis por tipo: \n";
+                cout << "3. Visualizar os imóveis por aluguel ou venda: \n";
+                int visualizar;
+                cin >> visualizar;
+                switch(visualizar){
+                    case 1:{
+                        mostraTodos();
+                    }
+                    case 2:{
+                        int tipo;
+                        cin >> tipo;
+                        mostraPorTipo(int tipo);
+                    }
+                    case 3:{
+                        bool seletor;
+                        cin >> seletor;
+                        void mostraAouV(bool seletor);
+                    }
+                }
+            }
+            case 4:{//Editar
+                cout << ("Busque pelo imóvel: ");
+                string busca;
+                cin >> busca;
+                atualizaImovel(string busca);
+            }
+            case 5:{//Deletar
+                cout << ("Delete o imóvel: ");
+                string busca;
+                cin >> busca;
+                removeImovel(string busca);
+            }
+            case 6:{//Sair
+                return 0;
+            }
+            }
     }
+return 0;
 }
