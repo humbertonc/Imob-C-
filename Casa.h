@@ -11,26 +11,19 @@ class Casa : public Imovel
         Casa();
         Casa(int NUMPAVIMEN, int NUMQUARTOS, double AREACONST, double AREATER, Endereco ENDE);
 
+        void setNUMPAVIMEN(int PAVIMEN);
+        void setNUMQUARTOS(int NUMQUARTOS);
+        void setAREACONST(double AREACONST);
+        void setAREATER(double AREATER);
 
-
-
-        void setNUMPAVIMEN(int);
-
-
-
-        void setNUMQUARTOS(int);
-        void setAREACONST(double);
-        void setAREATER(double);
-        int getNUMPAVIMEN());
-        int setNUMQUARTOS();
-        int setAREACONST();
-        int setAREATER();
-
-    private:
+        int getNUMPAVIMEN();
+        int getNUMQUARTOS();
+        int getAREACONST();
+        int getAREATER();
         int numPavimen, numQuartos;
         double areaConst, areaTer;
-        Endereco endereco;
-        int disponivel;
+
+    private:
 
     protected:
 
