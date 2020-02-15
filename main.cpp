@@ -40,7 +40,8 @@ setlocale(LC_ALL, "Portuguese");
                         Terreno t1 = Terreno();
                         cout <<("Título do anúncio do terreno:\n");
                         string vardescricao;
-                        cin >> vardescricao;
+                        getline(cin, vardescricao);
+                        cin.ignore()
                         t1.setTitulo(vardescricao);
                         cout <<("Descrição do terreno:\n");
                         cin >> vardescricao;
@@ -66,15 +67,18 @@ setlocale(LC_ALL, "Portuguese");
                         t1.setAouV(varaouv2);
                         cout <<("Cidade do terreno:\n");
                         string varcidade;
-                        cin >> varcidade;
+                        getline(cin, varcidade);
+                        cin.ignore()
                         t1.getEndereco().setCidade(varcidade);
                         cout <<("Bairro do terreno:\n");
                         string varbairro;
-                        cin >> varbairro;
+                        getline(cin, varbairro);
+                        cin.ignore()
                         t1.getEndereco().bairro = varbairro;
                         cout <<("Rua do terreno:\n");
                         string varrua;
-                        cin >> varrua;
+                        getline(cin, varrua);
+                        cin.ignore()
                         t1.getEndereco().setRua(varrua);
                         cout <<("Número do terreno na rua:\n");
                         int varnumero;
@@ -82,7 +86,8 @@ setlocale(LC_ALL, "Portuguese");
                         t1.getEndereco().setNumero(varnumero);
                         cout <<("CEP do terreno:\n");
                         string varcep;
-                        cin >> varcep;
+                        getline(cin, varcep);
+                        cin.ignore()
                         t1.getEndereco().setCEP(varcep);
                         t1.disponivel = true;
                         sist.cadastraImovel(&t1);
@@ -95,7 +100,8 @@ setlocale(LC_ALL, "Portuguese");
                         Casa c1 = Casa();
                         cout <<("Título do anúncio da casa:");
                         string vardescricao2;
-                        cin >> vardescricao2;
+                        getline(cin, vardescricao2);
+                        cin.ignore()
                         c1.setDescricao(vardescricao2);
                         cout << "Número de pavimentos: ";
                         int varpavimentos;
@@ -131,15 +137,18 @@ setlocale(LC_ALL, "Portuguese");
                         c1.setAouV(varaouv2);
                         cout <<("Cidade da casa:\n");
                         string varcidade2;
-                        cin >> varcidade2;
+                        getline(cin, varcidade2);
+                        cin.ignore()
                         c1.getEndereco().setCidade(varcidade2);
                         cout <<("Bairro da casa:\n");
                         string varbairro2;
-                        cin >> varbairro2;
+                        getline(cin, varbairro2);
+                        cin.ignore()
                         c1.getEndereco().setBairro(varbairro2);
                         cout <<("Rua da casa:\n");
                         string varrua2;
-                        cin >> varrua2;
+                        getline(cin, varrua2);
+                        cin.ignore()
                         c1.getEndereco().setRua(varrua2);
                         cout <<("Número da casa na rua:\n");
                         int varnumero2;
@@ -147,7 +156,8 @@ setlocale(LC_ALL, "Portuguese");
                         c1.getEndereco().setNumero(varnumero2);
                         cout <<("CEP da casa:\n");
                         string varcep2;
-                        cin >> varcep2;
+                        getline(cin, varcep2);
+                        cin.ignore()
                         c1.getEndereco().setCEP(varcep2);
                         c1.disponivel = true;
                         cout << "A casa " << c1.getDescricao() << " foi registrada com sucesso." << endl;
@@ -159,37 +169,33 @@ setlocale(LC_ALL, "Portuguese");
                         Apartamento ap1 = Apartamento();
                         cout <<("Título do anúncio do apartamento:");
                         string vardescricao3;
-                        cin >> vardescricao3;
+                        getline(cin, vardescricao3);
+                        cin.ignore()
                         ap1.setDescricao(vardescricao3);
-
-                        //areadoapartamento
+                        cout <<("Área do apartamento: \n");
                         double varareaapartamento;
                         cin >> varareaapartamento;
-
-                        //numeroquartos
+                        ap1.area = varareaapartamento;
+                        cout <<("Número de quartos: \n");
                         int varnumeroquartos;
                         cin >> varnumeroquartos;
-
-                        //posicao
-                        int varposicao;
-                        cin >> varposicao;
-
-                        //andar
+                        ap1.nquartos = varnumeroquartos;
+                        cout <<("Posicao do apartamento: \n");
+                        string varposicao;
+                        getline(cin, varposicao);
+                        cin.ignore()
+                        cout <<("Número de andares do apartamento: \n");
                         int varandar;
                         cin >> varandar;
-
-                        //valor do condominio
+                        ap1.andar = varandar;
+                        cout <<("Valor do condomínio do apartamento: \n");
                         double varvalorcondominio;
                         cin >> varvalorcondominio;
-
-                        //numero de vagas garagem
+                        ap1.valor = varvalorcondominio;
+                        cout <<("Número de vagas na garagem do apartamento: \n");
                         int varnumerovagasgaragemapt;
                         cin >> varnumerovagasgaragemapt;
-
-                        cout <<("Valor do apartamento:\n");
-                        double varvalor3;
-                        cin >> varvalor3;
-                        ap1.setValor(varvalor3);
+                        ap1.nvagasgaragem = varnumerovagasgaragemapt;
                         cout <<("O apartamento está para venda(1), ou para aluguel(2)?");
                         int varaouv1;
                         bool varaouv2;
@@ -203,15 +209,18 @@ setlocale(LC_ALL, "Portuguese");
                         ap1.setAouV(varaouv2);
                         cout <<("Cidade do apartamento:\n");
                         string varcidade3;
-                        cin >> varcidade3;
+                        getline(cin, varcidade3);
+                        cin.ignore()
                         ap1.getEndereco().setCidade(varcidade3);
                         cout <<("Bairro do apartamento:\n");
                         string varbairro3;
-                        cin >> varbairro3;
+                        getline(cin, varbairro3);
+                        cin.ignore()
                         ap1.getEndereco().setBairro(varbairro3);
                         cout <<("Rua do apartamento:\n");
                         string varrua3;
-                        cin >> varrua3;
+                        getline(cin, varrua3);
+                        cin.ignore()
                         ap1.getEndereco().setRua(varrua3);
                         cout <<("Número do apartamento na rua:\n");
                         int varnumero3;
@@ -219,7 +228,7 @@ setlocale(LC_ALL, "Portuguese");
                         ap1.getEndereco().setNumero(varnumero3);
                         cout <<("CEP do apartamento:\n");
                         string varcep3;
-                        cin >> varcep3;
+                        getline(cin, varcep3);
                         ap1.getEndereco().setCEP(varcep3);
                         ap1.disponivel = true;
                         cout << "O apartamento " << ap1.getDescricao() << " foi registrado com sucesso." << endl;
@@ -238,19 +247,22 @@ setlocale(LC_ALL, "Portuguese");
                 switch(opcao){
                     case 1:{
                         string busca;
-                        cin >> busca;
+                        getline(cin, busca);
+                        cin.ignore()
                         sist.buscaImovelTit(busca);
                         break;
                     }
                     case 2:{
                         string busca;
-                        cin >> busca;
+                        getline(cin, busca);
+                        cin.ignore()
                         sist.buscaImovelBai(busca);
                         break;
                     }
                     case 3:{
                         string busca;
-                        cin >> busca;
+                        getline(cin, busca);
+                        cin.ignore()
                         sist.buscaImovelCid(busca);
                         break;
                     }
@@ -294,14 +306,15 @@ setlocale(LC_ALL, "Portuguese");
             case 4:{//Editar
                 cout << ("Busque pelo imóvel: ");
                 string busca;
-                cin >> busca;
+                getline(cin, busca);
                 sist.atualizaImovel(busca);
             }
             break;
             case 5:{//Deletar
                 cout << ("Delete o imóvel: ");
                 string busca;
-                cin >> busca;
+                getline(cin, busca);
+                cin.ignore()
                 sist.removeImovel(busca);
             }
             break;
