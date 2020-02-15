@@ -17,12 +17,12 @@ setlocale(LC_ALL, "Portuguese");
     int i;
 
   for(i=0;i<100;i++){
-    cout <<("Seja bem-vindo ao nosso sistema de imobiliária!");
-    cout << ("1. Criar Imóvel ");
-    cout << ("2. Buscar Imóvel ");
-    cout << ("3. Listar Imóvel ");
-    cout << ("4. Editar Imóvel ");
-    cout << ("5. Deletar Imóvel ");
+    cout <<("Seja bem-vindo ao nosso sistema de imobiliÃ¡ria!");
+    cout << ("1. Criar ImÃ³vel ");
+    cout << ("2. Buscar ImÃ³vel ");
+    cout << ("3. Listar ImÃ³vel ");
+    cout << ("4. Editar ImÃ³vel ");
+    cout << ("5. Deletar ImÃ³vel ");
     cout << ("6. Sair ");
 
     int menu;
@@ -37,23 +37,21 @@ setlocale(LC_ALL, "Portuguese");
                     switch(menu123){
                     case 1:
                         {
-                        cout <<("Por favor, digite as informações referentes ao terreno.\n\n");
+                        cout <<("Por favor, digite as informaÃ§Ãµes referentes ao terreno.\n\n");
                         Terreno t1 = Terreno();
-                        cout <<("Título do anúncio do terreno:\n");
+                        cout <<("TÃ­tulo do anÃºncio do terreno:\n");
                         string vardescricao;
                         cin >> vardescricao;
                         t1.setDescricao(vardescricao);
-                        cout <<("Área do terreno:\n");
+                        cout <<("Ãrea do terreno:\n");
                         double vararea;
                         cin >> vararea;
                         t1.setArea(vararea);
-
-
                         cout <<("Valor do terreno:\n");
                         double varvalor;
                         cin >> varvalor;
                         t1.setValor(varvalor);
-                        cout <<("O terreno está para aluguel(true), ou para venda(false)?");
+                        cout <<("O terreno estÃ¡ para aluguel(true), ou para venda(false)?");
                         bool varaouv;
                         cin >> varaouv;
                         t1.setAouV(varaouv);
@@ -69,7 +67,7 @@ setlocale(LC_ALL, "Portuguese");
                         string varrua;
                         cin >> varrua;
                         t1.endereco.setRua(varrua);
-                        cout <<("Número do terreno na rua:\n");
+                        cout <<("NÃºmero do terreno na rua:\n");
                         int varnumero;
                         cin >> varnumero;
                         t1.endereco.setNumero(varnumero);
@@ -80,45 +78,37 @@ setlocale(LC_ALL, "Portuguese");
                         t1.disponivel = false;
                         cout << "O terreno " << t1.getDescricao() << " foi registrado com sucesso." << endl;
                         }
-                        //t1.pushback
                         break;
                     case 2:
                         {
-                        cout <<("Por favor, digite as informações referentes à casa.\n\n");
+                        cout <<("Por favor, digite as informaÃ§Ãµes referentes Ã  casa.\n\n");
                         Casa c1 = Casa();
-                        cout <<("Título do anúncio da casa:");
+                        cout <<("TÃ­tulo do anÃºncio da casa:");
                         string vardescricao2;
                         cin >> vardescricao2;
                         c1.setDescricao(vardescricao2);
-                        cout << "Número de pavimentos: ";
+                        cout << "NÃºmero de pavimentos: ";
                         int varpavimentos;
                         cin >> varpavimentos;
-                        //c1.setpavimentos
-
-                        //numquartos
-                        cout << "Número de quartos: ";
+                        c1.setNUMPAVIMEN(varpavimentos);
+                        cout << "NÃºmero de quartos: ";
                         int varnumquartos;
                         cin >> varnumquartos;
-                        //c1.setnumquartos
-
-                        //area terreno
-                        cout << "Área do terreno da casa: ";
+                        c1.setNUMQUARTOS(varnumquartos);
+                        cout << "Ãrea do terreno da casa: ";
                         double varareaterrenocasa;
                         cin >> varareaterrenocasa;
-                        //c1.setareaterrenocasa
-
+                        c1.setAREATER(double varareaterrenocasa);
                         //area construida
-                        cout << "Área construída: ";
+                        cout << "Ãrea construÃ­da: ";
                         double varareaconstruidacasa;
                         cin >> varareaconstruidacasa;
-                        //c1.setareaconstruida
-
+                        c1.setAREACONST(double varareaconstruidacasa);
                         cout <<("Valor da casa:\n");
                         double varvalor2;
                         cin >> varvalor2;
                         c1.setValor(varvalor2);
-
-                        cout <<("A casa está para aluguel(true), ou para venda(false)?");
+                        cout <<("A casa estÃ¡ para aluguel(true), ou para venda(false)?");
                         bool varaouv2;
                         cin >> varaouv2;
                         c1.setAouV(varaouv2);
@@ -134,7 +124,7 @@ setlocale(LC_ALL, "Portuguese");
                         string varrua2;
                         cin >> varrua2;
                         c1.endereco.setRua(varrua2);
-                        cout <<("Número da casa na rua:\n");
+                        cout <<("NÃºmero da casa na rua:\n");
                         int varnumero2;
                         cin >> varnumero2;
                         c1.endereco.setNumero(varnumero2);
@@ -145,13 +135,12 @@ setlocale(LC_ALL, "Portuguese");
                         c1.disponivel = false;
                         cout << "A casa " << c1.getDescricao() << " foi registrada com sucesso." << endl;
                         }
-                        //c1.push_back
                         break;
                     case 3:
                         {
-                         cout <<("Por favor, digite as informações referentes ao apartamento.\n\n");
+                         cout <<("Por favor, digite as informaÃ§Ãµes referentes ao apartamento.\n\n");
                         Apartamento ap1 = Apartamento();
-                        cout <<("Título do anúncio do apartamento:");
+                        cout <<("TÃ­tulo do anÃºncio do apartamento:");
                         string vardescricao3;
                         cin >> vardescricao3;
                         ap1.setDescricao(vardescricao3);
@@ -184,7 +173,7 @@ setlocale(LC_ALL, "Portuguese");
                         double varvalor3;
                         cin >> varvalor3;
                         ap1.setValor(varvalor3);
-                        cout <<("O apartamento está para aluguel(true), ou para venda(false)?");
+                        cout <<("O apartamento estÃ¡ para aluguel(true), ou para venda(false)?");
                         bool varaouv3;
                         cin >> varaouv3;
                         ap1.setAouV(varaouv3);
@@ -200,7 +189,7 @@ setlocale(LC_ALL, "Portuguese");
                         string varrua3;
                         cin >> varrua3;
                         ap1.endereco.setRua(varrua3);
-                        cout <<("Número do apartamento na rua:\n");
+                        cout <<("NÃºmero do apartamento na rua:\n");
                         int varnumero3;
                         cin >> varnumero3;
                         ap1.endereco.setNumero(varnumero3);
@@ -210,16 +199,15 @@ setlocale(LC_ALL, "Portuguese");
                         ap1.endereco.setCEP(varcep3);
                         ap1.disponivel = false;
                         cout << "O apartamento " << ap1.getDescricao() << " foi registrado com sucesso." << endl;
-                        //ap1.push_back
                         break;
                         }
                     }
             }
             case 2:{//Buscar
-                cout << ("1. Buscar imóvel por título: \n");
-                cout << ("2. Buscar imóvel por bairro: \n");
-                cout << ("3. Buscar imóvel por cidade: \n");
-                cout << ("4. Buscar por preco de imóvel: \n");
+                cout << ("1. Buscar imÃ³vel por tÃ­tulo: \n");
+                cout << ("2. Buscar imÃ³vel por bairro: \n");
+                cout << ("3. Buscar imÃ³vel por cidade: \n");
+                cout << ("4. Buscar por preco de imÃ³vel: \n");
                 int opcao;
                 cin >> opcao;
                 switch(opcao){
@@ -248,9 +236,9 @@ setlocale(LC_ALL, "Portuguese");
                 }
             }
             case 3:{//Listar
-                cout << "1. Visualizar todos os imóveis: \n";
-                cout << "2. Visualizar os imóveis por tipo: \n";
-                cout << "3. Visualizar os imóveis por aluguel ou venda: \n";
+                cout << "1. Visualizar todos os imÃ³veis: \n";
+                cout << "2. Visualizar os imÃ³veis por tipo: \n";
+                cout << "3. Visualizar os imÃ³veis por aluguel ou venda: \n";
                 int visualizar;
                 cin >> visualizar;
                 switch(visualizar){
@@ -270,13 +258,13 @@ setlocale(LC_ALL, "Portuguese");
                 }
             }
             case 4:{//Editar
-                cout << ("Busque pelo imóvel: ");
+                cout << ("Busque pelo imÃ³vel: ");
                 string busca;
                 cin >> busca;
                 atualizaImovel(string busca);
             }
             case 5:{//Deletar
-                cout << ("Delete o imóvel: ");
+                cout << ("Delete o imÃ³vel: ");
                 string busca;
                 cin >> busca;
                 removeImovel(string busca);
