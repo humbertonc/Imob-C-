@@ -106,7 +106,6 @@ setlocale(LC_ALL, "Portuguese");
                         cout << "O terreno " << t1->getTitulo() << " foi registrado com sucesso.\n\n" << endl;
 
                         /*arquivo.open("lista.txt", ios::out);
-
                         arquivo << "Titulo: " << t1.getTitulo() << endl;
                         arquivo << "Descrição: " << t1.getDescricao() << endl;
                         arquivo << "Valor: " << t1.getValor() << endl;
@@ -117,7 +116,6 @@ setlocale(LC_ALL, "Portuguese");
                             arquivo << "Disponível para aluguel" << endl;
                         }
                         arquivo << "Área: " << t1.area << endl;
-
                         arquivo << "   Endereco:" << endl;
                         arquivo << "Rua: " << t1.getEndereco().rua << endl;
                         arquivo << "Número: " << t1.getEndereco().numero << endl;
@@ -125,7 +123,6 @@ setlocale(LC_ALL, "Portuguese");
                         arquivo << "Bairro: " << t1.getEndereco().bairro << endl;
                         arquivo << "Cidade: " << t1.getEndereco().cidade << endl;
                         arquivo << "\n" << endl;
-
                         arquivo.close();*/
 
                         }
@@ -340,7 +337,7 @@ setlocale(LC_ALL, "Portuguese");
                 cin >> opcao;
                 switch(opcao){
                     case 1:{
-                        cout >> ("Busque o imóvel por título: \n");
+                        cout << ("Busque o imóvel por título: \n");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
@@ -349,7 +346,7 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 2:{
-                        cout >> ("Busque o imóvel por bairro: \n");
+                        cout << ("Busque o imóvel por bairro: \n");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
@@ -358,7 +355,7 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 3:{
-                        cout >> ("Busque o imóvel por cidade: \n");
+                        cout << ("Busque o imóvel por cidade: \n");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
@@ -367,8 +364,8 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 4:{
-                        cout >> ("Busque o imóvel por valor: \n");
-                        cout >> ("Para não ter valor mínimo ou máximo, digite 0: \n");
+                        cout << ("Busque o imóvel por valor: \n");
+                        cout << ("Para não ter valor mínimo ou máximo, digite 0: \n");
                         int minimo;
                         int maximo;
                         cin >> minimo;
@@ -412,7 +409,10 @@ setlocale(LC_ALL, "Portuguese");
                 string busca;
                 cin.ignore();
                 getline(cin, busca);
-                sist.atualizaImovel(busca); //já contém os inputs do case 4: EDITAR
+                int tipo;
+                cout << ("Digite o tipo do imóvel");
+                cin >> tipo;
+                sist.atualizaImovel(busca, tipo); //já contém os inputs do case 4: EDITAR
             }
             break;
             case 5:{//Deletar
@@ -420,7 +420,7 @@ setlocale(LC_ALL, "Portuguese");
                 string busca;
                 cin.ignore();
                 getline(cin, busca);
-                sist.removeImovel(busca,2);
+                sist.removeImovel(busca);
             }
             break;
             case 6:{//Sair
