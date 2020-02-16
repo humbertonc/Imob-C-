@@ -17,9 +17,10 @@ class SistemaImobiliaria
 
         void cadastraImovel(Imovel *iv);
         void removeImovel(string busca);
-        void atualizaImovel(string busca);
+        void atualizaImovel(string busca, int tipo);
 
         void ImprimeImovel(Imovel *imv, int num);
+        void ImprimeImovelRed(Imovel *imv, int num);
 
         void mostraTodos();
         void mostraPorTipo(int tipo);
