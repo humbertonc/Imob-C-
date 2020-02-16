@@ -8,10 +8,14 @@
 #include <Endereco.h>
 #include <SistemaImobiliaria.h>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
 int main(){
+    fstream arquivo;
+    arquivo.open("lista.txt", ios::in);
+    arquivo.close();
     //imoveis.push_back(new Terreno(2.5)); SINTAXE DE PUSH_BACK
 setlocale(LC_ALL, "Portuguese");
     int i, menu = 0;
@@ -37,24 +41,27 @@ setlocale(LC_ALL, "Portuguese");
                     case 1:
                         {
                         cout <<("Por favor, digite as informações referentes ao terreno.\n\n");
-                        Terreno t1 = Terreno();
+                        Terreno *t1 = new Terreno();
+                        Endereco ende = Endereco();
                         cout <<("Título do anúncio do terreno:\n");
                         string vardescricao;
                         cin.ignore();
                         getline(cin, vardescricao);
-                    
-                        t1.setTitulo(vardescricao);
+
+                        t1->setTitulo(vardescricao);
                         cout <<("Descrição do terreno:\n");
-                        cin >> vardescricao;
-                        t1.setDescricao(vardescricao);
+
+                        getline(cin, vardescricao);
+
+                        t1->setDescricao(vardescricao);
                         cout <<("Área do terreno:\n");
                         double vararea;
                         cin >> vararea;
-                        t1.setArea(vararea);
+                        t1->setArea(vararea);
                         cout <<("Valor do terreno:\n");
                         double varvalor;
                         cin >> varvalor;
-                        t1.setValor(varvalor);
+                        t1->setValor(varvalor);
                         cout <<("O terreno está para venda(1), ou para aluguel(2)?\n");
                         int varaouv1;
                         bool varaouv2;
@@ -65,38 +72,63 @@ setlocale(LC_ALL, "Portuguese");
                         else{
                             varaouv2 = false;
                         }
-                        t1.setAouV(varaouv2);
+                        t1->setAouV(varaouv2);
                         cout <<("Cidade do terreno:\n");
                         string varcidade;
                         cin.ignore();
                         getline(cin, varcidade);
-                       
-                        t1.getEndereco().setCidade(varcidade);
+
+                        ende.cidade = varcidade;
                         cout <<("Bairro do terreno:\n");
                         string varbairro;
-                        cin.ignore();
+
                         getline(cin, varbairro);
-                        
-                        t1.getEndereco().bairro = varbairro;
+
+                        ende.bairro = varbairro;
                         cout <<("Rua do terreno:\n");
                         string varrua;
-                        cin.ignore();
+
                         getline(cin, varrua);
-                        
-                        t1.getEndereco().setRua(varrua);
+
+                        ende.rua = varrua;
                         cout <<("Número do terreno na rua:\n");
                         int varnumero;
                         cin >> varnumero;
-                        t1.getEndereco().setNumero(varnumero);
+                        ende.numero = varnumero;
                         cout <<("CEP do terreno:\n");
                         string varcep;
                         cin.ignore();
                         getline(cin, varcep);
-                        
-                        t1.getEndereco().setCEP(varcep);
-                        t1.disponivel = true;
-                        sist.cadastraImovel(&t1);
-                        cout << "O terreno " << t1.getTitulo() << " foi registrado com sucesso.\n\n" << endl;
+
+                        ende.cep = varcep;
+                        t1->disponivel = true;
+                        t1->setEndereco(ende);
+                        sist.cadastraImovel(t1);
+                        cout << "O terreno " << t1->getTitulo() << " foi registrado com sucesso.\n\n" << endl;
+
+                        /*arquivo.open("lista.txt", ios::out);
+
+                        arquivo << "Titulo: " << t1.getTitulo() << endl;
+                        arquivo << "Descrição: " << t1.getDescricao() << endl;
+                        arquivo << "Valor: " << t1.getValor() << endl;
+                        if (t1.getAouV()) {
+                            arquivo << "Disponível para venda" << endl;
+                        }
+                        else {
+                            arquivo << "Disponível para aluguel" << endl;
+                        }
+                        arquivo << "Área: " << t1.area << endl;
+
+                        arquivo << "   Endereco:" << endl;
+                        arquivo << "Rua: " << t1.getEndereco().rua << endl;
+                        arquivo << "Número: " << t1.getEndereco().numero << endl;
+                        arquivo << "CEP: " << t1.getEndereco().cep << endl;
+                        arquivo << "Bairro: " << t1.getEndereco().bairro << endl;
+                        arquivo << "Cidade: " << t1.getEndereco().cidade << endl;
+                        arquivo << "\n" << endl;
+
+                        arquivo.close();*/
+
                         }
                         break;
                     case 2:
@@ -107,7 +139,7 @@ setlocale(LC_ALL, "Portuguese");
                         string vardescricao2;
                             cin.ignore();
                         getline(cin, vardescricao2);
-                        
+
                         c1.setDescricao(vardescricao2);
                         cout << "Número de pavimentos: ";
                         int varpavimentos;
@@ -143,21 +175,21 @@ setlocale(LC_ALL, "Portuguese");
                         c1.setAouV(varaouv2);
                         cout <<("Cidade da casa:\n");
                         string varcidade2;
-                        cin.ignore();    
+                        cin.ignore();
                         getline(cin, varcidade2);
-                        
+
                         c1.getEndereco().setCidade(varcidade2);
                         cout <<("Bairro da casa:\n");
                         string varbairro2;
                         cin.ignore();
                         getline(cin, varbairro2);
-                        
+
                         c1.getEndereco().setBairro(varbairro2);
                         cout <<("Rua da casa:\n");
                         string varrua2;
                         cin.ignore();
                         getline(cin, varrua2);
-                        
+
                         c1.getEndereco().setRua(varrua2);
                         cout <<("Número da casa na rua:\n");
                         int varnumero2;
@@ -165,12 +197,35 @@ setlocale(LC_ALL, "Portuguese");
                         c1.getEndereco().setNumero(varnumero2);
                         cout <<("CEP da casa:\n");
                         string varcep2;
-                        cin.ignore();    
+                        cin.ignore();
                         getline(cin, varcep2);
-                        
+
                         c1.getEndereco().setCEP(varcep2);
                         c1.disponivel = true;
                         cout << "A casa " << c1.getDescricao() << " foi registrada com sucesso." << endl;
+
+                        arquivo.open("lista.txt", ios::out);
+                        arquivo << "Titulo: " << c1.getTitulo() << endl;
+                        arquivo << "Descrição: " << c1.getDescricao() << endl;
+                        arquivo << "Valor: " << c1.getValor() << endl;
+                        if (c1.getAouV()) {
+                            arquivo << "Disponível para venda" << endl;
+                        }
+                        else {
+                            arquivo << "Disponível para aluguel" << endl;
+                        }
+                        arquivo << "Área do terreno: " << c1.areaTer << endl;
+                        arquivo << "Área construída: " << c1.areaConst << endl;
+                        arquivo << "Número de pavimentos: " << c1.numPavimen << endl;
+                        arquivo << "Número de quartos: " << c1.numQuartos << endl;
+                        arquivo << "   Endereco:" << endl;
+                        arquivo << "Rua: " << c1.getEndereco().rua << endl;
+                        arquivo << "Número: " << c1.getEndereco().numero << endl;
+                        arquivo << "CEP: " << c1.getEndereco().cep << endl;
+                        arquivo << "Bairro: " << c1.getEndereco().bairro << endl;
+                        arquivo << "Cidade: " << c1.getEndereco().cidade << endl;
+                        arquivo << "\n" << endl;
+                        arquivo.close();
                         }
                         break;
                     case 3:
@@ -181,7 +236,7 @@ setlocale(LC_ALL, "Portuguese");
                         string vardescricao3;
                         cin.ignore();
                         getline(cin, vardescricao3);
-                        
+
                         ap1.setDescricao(vardescricao3);
                         cout <<("Área do apartamento: \n");
                         double varareaapartamento;
@@ -195,7 +250,7 @@ setlocale(LC_ALL, "Portuguese");
                         string varposicao;
                         cin.ignore();
                         getline(cin, varposicao);
-                        
+
                         cout <<("Número de andares do apartamento: \n");
                         int varandar;
                         cin >> varandar;
@@ -203,7 +258,7 @@ setlocale(LC_ALL, "Portuguese");
                         cout <<("Valor do condomínio do apartamento: \n");
                         double varvalorcondominio;
                         cin >> varvalorcondominio;
-                        ap1.valor = varvalorcondominio;
+                        ap1.setValor(varvalorcondominio);
                         cout <<("Número de vagas na garagem do apartamento: \n");
                         int varnumerovagasgaragemapt;
                         cin >> varnumerovagasgaragemapt;
@@ -223,19 +278,19 @@ setlocale(LC_ALL, "Portuguese");
                         string varcidade3;
                         cin.ignore();
                         getline(cin, varcidade3);
-                        
+
                         ap1.getEndereco().setCidade(varcidade3);
                         cout <<("Bairro do apartamento:\n");
                         string varbairro3;
                         cin.ignore();
                         getline(cin, varbairro3);
-                        
+
                         ap1.getEndereco().setBairro(varbairro3);
                         cout <<("Rua do apartamento:\n");
                         string varrua3;
                         cin.ignore();
                         getline(cin, varrua3);
-                        
+
                         ap1.getEndereco().setRua(varrua3);
                         cout <<("Número do apartamento na rua:\n");
                         int varnumero3;
@@ -247,6 +302,31 @@ setlocale(LC_ALL, "Portuguese");
                         ap1.getEndereco().setCEP(varcep3);
                         ap1.disponivel = true;
                         cout << "O apartamento " << ap1.getDescricao() << " foi registrado com sucesso." << endl;
+
+                        arquivo.open("lista.txt", ios::out);
+                        arquivo <<": " << ap1.getTitulo() << "\n" << endl;
+                        arquivo << "Descrição: " << ap1.getDescricao() << endl;
+                        arquivo << "Valor: " << ap1.getValor() << endl;
+                        if (ap1.getAouV()) {
+                            arquivo << "Disponível para venda" << endl;
+                        }
+                        else {
+                            arquivo << "Disponível para aluguel" << endl;
+                        }
+                        arquivo << "Área: " << ap1.area << endl;
+                        arquivo << "Andar: " << ap1.andar << endl;
+                        arquivo << "Número de vagas na garagem: " << ap1.nvagasgaragem << endl;
+                        arquivo << "Número de quartos: " << ap1.nquartos << endl;
+                        arquivo << "Posição do apartamento: " << ap1.posicao << endl;
+                        arquivo << "   Endereco:" << endl;
+                        arquivo << "Rua: " << ap1.getEndereco().rua << endl;
+                        arquivo << "Número: " << ap1.getEndereco().numero << endl;
+                        arquivo << "CEP: " << ap1.getEndereco().cep << endl;
+                        arquivo << "Bairro: " << ap1.getEndereco().bairro << endl;
+                        arquivo << "Cidade: " << ap1.getEndereco().cidade << endl;
+                        arquivo << "\n" << endl;
+                        arquivo.close();
+
                         break;
                         }
                     }
@@ -264,7 +344,7 @@ setlocale(LC_ALL, "Portuguese");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
-                        
+
                         sist.buscaImovelTit(busca);
                         break;
                     }
@@ -272,7 +352,7 @@ setlocale(LC_ALL, "Portuguese");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
-                        
+
                         sist.buscaImovelBai(busca);
                         break;
                     }
@@ -280,7 +360,7 @@ setlocale(LC_ALL, "Portuguese");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
-                       
+
                         sist.buscaImovelCid(busca);
                         break;
                     }
@@ -334,11 +414,13 @@ setlocale(LC_ALL, "Portuguese");
                 string busca;
                 cin.ignore();
                 getline(cin, busca);
-                
-                sist.removeImovel(busca);
+
+                sist.removeImovel(busca,2);
             }
             break;
             case 6:{//Sair
+                arquivo.open("lista.txt", ios::out);
+                arquivo.close();
                 return 0;
             }
             break;
