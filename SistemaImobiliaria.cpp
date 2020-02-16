@@ -9,7 +9,11 @@ using namespace std;
 
 SistemaImobiliaria::SistemaImobiliaria()
 {
-    
+    int i;
+
+    for(i = 0; i < 100; i++){
+
+    }
 }
 
 void SistemaImobiliaria::cadastraImovel(Imovel *iv)
@@ -38,22 +42,19 @@ void SistemaImobiliaria::removeImovel(string busca)
         switch(imovs[i]->getTipo()){
         case 1:
         cout << "Tipo: Terreno" << endl;
-        ImprimeImovel(imovs[i], j);
+        ImprimeImovel(imovs[i], i+1);
         break;
         case 2:
         cout << "Tipo: Casa" << endl;
-        ImprimeImovel(imovs[i], j);
+        ImprimeImovel(imovs[i], i+1);
         break;
         case 3:
         cout << "Tipo: Apartamento" << endl;
-        ImprimeImovel(imovs[i], j);
+        ImprimeImovel(imovs[i], i+1);
         break;
         }
-
-        j++;
     }
 
-    cout << "\n\n" << endl;
     cout << "Digite o número do imóvel a ser removido" << endl;
     cin >> it;
     it--;
@@ -63,13 +64,14 @@ void SistemaImobiliaria::removeImovel(string busca)
     cout << "Imóvel removido com sucesso!" << endl;
 }
 
-void SistemaImobiliaria::atualizaImovel(string busca)
+void SistemaImobiliaria::atualizaImovel(string busca, int tipo)
 {
     int i, j = 1, it;
     string minuscula;
 
         transform(busca.begin(), busca.end(), busca.begin(), ::tolower);
-
+    switch(tipo){
+    case 1:
     cout << "========= TERRENOS ========" << endl;
     cout << endl;
 
@@ -83,10 +85,77 @@ void SistemaImobiliaria::atualizaImovel(string busca)
             continue;
         }
 
-        ImprimeImovel(imovs[i], j);
-        j++;
-    }
+        ImprimeImovel(imovs[i], i+1);
+        cout << "" << endl;
+        cout << "Digite o número do terreno a ser atualizado" << endl;
+        cin >> it;
+        it--;
+        Terreno *t1 =  new Terreno();
+        Endereco ende = Endereco();
+            cout <<("Título do anúncio do terreno:\n");
+            string vardescricao;
+            cin.ignore();
+            getline(cin, vardescricao);
+            t1->setTitulo(vardescricao);
 
+            cout <<("Descrição do terreno:\n");
+            getline(cin, vardescricao);
+            t1->setDescricao(vardescricao);
+
+            cout <<("Área do terreno:\n");
+            double vararea;
+            cin >> vararea;
+            t1->setArea(vararea);
+
+            cout <<("Valor do terreno:\n");
+            double varvalor;
+            cin >> varvalor;
+            t1->setValor(varvalor);
+
+            cout <<("O terreno está para venda(1), ou para aluguel(2)?\n");
+            int varaouv1;
+            bool varaouv2;
+            cin >> varaouv1;
+                if(varaouv1 == 1){
+                    varaouv2 = true;
+                }
+                else{
+                varaouv2 = false;
+                }
+                t1->setAouV(varaouv2);
+                cout <<("Cidade do terreno:\n");
+                string varcidade;
+                cin.ignore();
+                getline(cin, varcidade);
+
+                ende.cidade = varcidade;
+                cout <<("Bairro do terreno:\n");
+                string varbairro;
+                getline(cin, varbairro);
+
+                ende.bairro = varbairro;
+                cout <<("Rua do terreno:\n");
+                string varrua;
+
+                getline(cin, varrua);
+
+                ende.rua = varrua;
+                cout <<("Número do terreno na rua:\n");
+                int varnumero;
+                cin >> varnumero;
+                ende.numero = varnumero;
+                cout <<("CEP do terreno:\n");
+                string varcep;
+                cin.ignore();
+                getline(cin, varcep);
+
+                ende.cep = varcep;
+                t1->disponivel = true;
+                t1->setEndereco(ende);
+                imovs[i] = t1;
+    }
+    break;
+    case 2:
     cout << "========= CASAS ========" << endl;
     cout << endl;
     j = 1;
@@ -100,10 +169,14 @@ void SistemaImobiliaria::atualizaImovel(string busca)
             continue;
         }
 
-        ImprimeImovel(imovs[i], j);
-        j++;
+        ImprimeImovel(imovs[i], i+1);
+        cout << "" << endl;
+        cout << "Digite o número do imóvel a ser atualizado" << endl;
+        cin >> it;
+        it--;
     }
-
+    break;
+    case 3:
     cout << "========= APARTAMENTOS ========" << endl;
     cout << endl;
     j = 1;
@@ -117,14 +190,15 @@ void SistemaImobiliaria::atualizaImovel(string busca)
             continue;
         }
 
-        ImprimeImovel(imovs[i], j);
-        j++;
-    }
+        ImprimeImovel(imovs[i], i+1);
 
-    cout << "\n\n" << endl;
-    cout << "Digite o número do imóvel a ser atualizado" << endl;
-    cin >> it;
-    it--;
+        cout << "" << endl;
+        cout << "Digite o número do imóvel a ser atualizado" << endl;
+        cin >> it;
+        it--;
+    }
+    break;
+    }
 
     cout << "Imóvel atualizado com sucesso!" << endl;
 }
@@ -149,7 +223,7 @@ void SistemaImobiliaria::ImprimeImovel(Imovel *imv, int num)
 
         switch(imv->getTipo()){
         case 1:
-        cout << "Área: " << ((Terreno *)imv)->area << endl;
+        cout << "Área: " << ((Terreno *)imv)->area << "\n\n" <<endl;
         break;
 
         case 2:
@@ -170,6 +244,14 @@ void SistemaImobiliaria::ImprimeImovel(Imovel *imv, int num)
 
 }
 
+void SistemaImobiliaria::ImprimeImovelRed(Imovel *imv, int num)
+{
+        cout << num << ": " << imv->getTitulo() << "\n" <<endl;
+        cout << "Valor: " << imv->getValor() << endl;
+        cout << "Bairro: " << imv->getEndereco().bairro << endl;
+        cout << "Cidade: " << imv->getEndereco().cidade<<"\n\n" << endl;
+}
+
 void SistemaImobiliaria::mostraTodos()
 {
     int i, j = 1;
@@ -180,7 +262,7 @@ void SistemaImobiliaria::mostraTodos()
         if(!imovs[i]->disponivel || imovs[i]->getTipo() != 1){
             continue;
         }
-        ImprimeImovel(imovs[i], j);
+        ImprimeImovelRed(imovs[i], j);
         j++;
     }
 
@@ -192,7 +274,7 @@ void SistemaImobiliaria::mostraTodos()
             continue;
         }
 
-        ImprimeImovel(imovs[i], j + 1);
+        ImprimeImovelRed(imovs[i], j + 1);
         j++;
     }
 
@@ -204,7 +286,7 @@ void SistemaImobiliaria::mostraTodos()
             continue;
         }
 
-        ImprimeImovel(imovs[i], j + 1);
+        ImprimeImovelRed(imovs[i], j + 1);
         j++;
     }
 }
@@ -268,7 +350,7 @@ void SistemaImobiliaria::mostraAouV(bool seletor)
     cout << "========= TERRENOS ========" << endl;
     cout << endl;
     for(i = 0; i < imovs.size(); i++){
-            if((!imovs[i]->disponivel || imovs[i]->getTipo() != 1) && (imovs[i]->getAouV() != seletor)){
+            if((!imovs[i]->disponivel || imovs[i]->getTipo() != 1) || (imovs[i]->getAouV() != seletor)){
                 continue;
             }
             ImprimeImovel(imovs[i], j);
@@ -282,7 +364,7 @@ void SistemaImobiliaria::mostraAouV(bool seletor)
     j = 1;
 
     for(i = 0; i < imovs.size(); i++){
-            if((!imovs[i]->disponivel || imovs[i]->getTipo() != 2) && (imovs[i]->getAouV() != seletor)){
+            if((!imovs[i]->disponivel || imovs[i]->getTipo() != 2) || (imovs[i]->getAouV() != seletor)){
                 continue;
             }
             ImprimeImovel(imovs[i], j);
@@ -293,7 +375,7 @@ void SistemaImobiliaria::mostraAouV(bool seletor)
     cout << endl;
     j = 1;
     for(i = 0; i < imovs.size(); i++){
-            if((!imovs[i]->disponivel || imovs[i]->getTipo() != 3) && (imovs[i]->getAouV() != seletor)){
+            if((!imovs[i]->disponivel || imovs[i]->getTipo() != 3) || (imovs[i]->getAouV() != seletor)){
                 continue;
             }
             ImprimeImovel(imovs[i], j);
