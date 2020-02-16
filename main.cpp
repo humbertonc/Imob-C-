@@ -16,7 +16,6 @@ int main(){
     fstream arquivo;
     arquivo.open("lista.txt", ios::in);
     arquivo.close();
-    //imoveis.push_back(new Terreno(2.5)); SINTAXE DE PUSH_BACK
 setlocale(LC_ALL, "Portuguese");
     int i, menu = 0;
     SistemaImobiliaria sist;
