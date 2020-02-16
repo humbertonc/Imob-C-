@@ -341,6 +341,7 @@ setlocale(LC_ALL, "Portuguese");
                 cin >> opcao;
                 switch(opcao){
                     case 1:{
+                        cout >> ("Busque o imóvel por título: \n");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
@@ -349,6 +350,7 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 2:{
+                        cout >> ("Busque o imóvel por bairro: \n");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
@@ -357,6 +359,7 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 3:{
+                        cout >> ("Busque o imóvel por cidade: \n");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
@@ -365,6 +368,8 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 4:{
+                        cout >> ("Busque o imóvel por valor: \n");
+                        cout >> ("Para não ter valor mínimo ou máximo, digite 0: \n");
                         int minimo;
                         int maximo;
                         cin >> minimo;
