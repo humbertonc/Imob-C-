@@ -340,7 +340,7 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 3:{
-                        cout << "Ver o imóveis disponíveis para venda (1) ou para aluguel(2): \n" << endl;
+                        cout << "Ver o imóveis disponíveis para venda (1) ou para aluguel(2): " << endl;
                         bool seletor;
                         int seleint;
                         cin >> seleint;
@@ -356,19 +356,19 @@ setlocale(LC_ALL, "Portuguese");
             }
             break;
             case 4:{//Editar
-                cout << ("Busque o título do imóvel a ser atualizado: ");
+                cout << ("Busque o título do imóvel a ser atualizado: \n");
                 string busca;
                 cin.ignore();
                 getline(cin, busca);
                 int tipo;
                 cout << ("Digite o tipo do imóvel") << endl;
-                cout << "1-Terreno   2-Casa   3-Apartamento";
+                cout << "1-Terreno   2-Casa   3-Apartamento\n";
                 cin >> tipo;
                 sist.atualizaImovel(busca, tipo); //já contém os inputs do case 4: EDITAR
             }
             break;
             case 5:{//Deletar
-                cout << ("Busque o título do imóvel a ser deletado: ");
+                cout << ("Busque o título do imóvel a ser deletado: \n");
                 string busca;
                 cin.ignore();
                 getline(cin, busca);
