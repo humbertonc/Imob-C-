@@ -20,9 +20,9 @@ setlocale(LC_ALL, "Portuguese");
 
     Apartamento *papt;
     bool av;
-    int numero, quart, pav;
+    int numero, quart, pav, nquartos, andar, nvagasgaragem;
     double valor, area, ater, aconst;
-    string titulao, descrica;
+    string titulao, descrica, posicao;
     ifstream arquivo;
 	arquivo.open("lista.txt");
 
@@ -32,22 +32,30 @@ setlocale(LC_ALL, "Portuguese");
         if(tipao == 1){
             Terreno *pter = new Terreno();
             Endereco ende = Endereco();
+
             getline(arquivo, titulao);
             pter->setTitulo(titulao);
+
             getline(arquivo, descrica);
             pter->setDescricao(descrica);
+
             arquivo >> av;
             pter->setAouV(av);
+
             arquivo >> valor;
             arquivo.ignore();
             pter->setValor(valor);
+
             getline(arquivo, ende.bairro);
             getline(arquivo, ende.cep);
             getline(arquivo, ende.cidade);
+
             arquivo >> ende.numero;
             arquivo.ignore();
+
             getline(arquivo, ende.rua);
             arquivo >> area;
+
             arquivo.ignore();
             pter->setArea(area);
 
@@ -57,30 +65,40 @@ setlocale(LC_ALL, "Portuguese");
         }else if(tipao == 2){
             Casa *pcasa = new Casa();
             Endereco ende = Endereco();
+
             getline(arquivo, titulao);
             pcasa->setTitulo(titulao);
+
             getline(arquivo, descrica);
             pcasa->setDescricao(descrica);
+
             arquivo >> av;
             pcasa->setAouV(av);
+
             arquivo >> valor;
             arquivo.ignore();
             pcasa->setValor(valor);
+
             getline(arquivo, ende.bairro);
             getline(arquivo, ende.cep);
             getline(arquivo, ende.cidade);
+
             arquivo >> ende.numero;
             arquivo.ignore();
             getline(arquivo, ende.rua);
+
             arquivo >> aconst;
             arquivo.ignore();
             pcasa->setAREACONST(aconst);
+
             arquivo >> ater;
             arquivo.ignore();
             pcasa->setAREATER(ater);
+
             arquivo >> pav;
             arquivo.ignore();
             pcasa->setNUMPAVIMEN(pav);
+
             arquivo >> quart;
             arquivo.ignore();
             pcasa->setNUMQUARTOS(quart);
@@ -89,10 +107,57 @@ setlocale(LC_ALL, "Portuguese");
 
             sist.imovs.push_back(pcasa);
         }else if(tipao == 3){
-        
-        
-        }
+            Apartamento *ap1 = new Apartamento();
+            Endereco ende = Endereco();
 
+            getline(arquivo, titulao);
+            ap1->setTitulo(titulao);
+
+            getline(arquivo, descrica);
+            ap1->setDescricao(descrica);
+
+            arquivo >> av;
+            ap1->setAouV(av);
+
+            arquivo >> valor;
+            arquivo.ignore();
+            ap1->setValor(valor);
+
+            getline(arquivo, ende.bairro);
+            getline(arquivo, ende.cep);
+            getline(arquivo, ende.cidade);
+
+            arquivo >> ende.numero;
+            arquivo.ignore();
+            getline(arquivo, ende.rua);
+
+            arquivo >> area;
+            arquivo.ignore();
+            ap1->area = area;
+
+            arquivo >> nquartos;
+            arquivo.ignore();
+            ap1->nquartos = nquartos;
+
+            arquivo >> posicao;
+            arquivo.ignore();
+            ap1->posicao = posicao;
+
+            arquivo >> andar;
+            arquivo.ignore();
+            ap1->andar = andar;
+
+            arquivo >> valor;
+            arquivo.ignore();
+            ap1->valor = valor;
+
+            arquivo >> nvagasgaragem;
+            arquivo.ignore();
+            ap1->nvagasgaragem = nvagasgaragem;
+
+            ap1->setEndereco(ende);
+            sist.imovs.push_back(ap1);
+        }
     }
     arquivo.close();
 
