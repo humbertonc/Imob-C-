@@ -18,8 +18,8 @@ class Casa : public Imovel
 
         int getNUMPAVIMEN();
         int getNUMQUARTOS();
-        int getAREACONST();
-        int getAREATER();
+        double getAREACONST();
+        double getAREATER();
         int numPavimen, numQuartos;
         double areaConst, areaTer;
 
