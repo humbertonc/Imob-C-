@@ -212,7 +212,7 @@ setlocale(LC_ALL, "Portuguese");
                         string varposicao;
                         cin.ignore();
                         getline(cin, varposicao);
-
+                        ap1->posicao = varposicao;
                         cout <<("Andar do apartamento: \n");
                         int varandar;
                         cin >> varandar;
@@ -379,6 +379,9 @@ setlocale(LC_ALL, "Portuguese");
                 fstream arquivo;
                 arquivo.open("lista.txt",  ios::out | ios::trunc);
                 for(int i=0; sist.imovs.size(); i++){
+                    if(!sist.imovs[i]->disponivel){
+                        continue;
+                    }
                     arquivo << sist.imovs[i]->getTipo() << endl;
                     arquivo << sist.imovs[i]->getTitulo() << endl;
                     arquivo << sist.imovs[i]->getDescricao() << endl;
