@@ -482,7 +482,7 @@ void SistemaImobiliaria::mostraPorTipo(int tipo)
             continue;
         }
 
-        ImprimeImovel(imovs[i], j + 1);
+        ImprimeImovel(imovs[i], j);
         j++;
         }
         break;
@@ -497,7 +497,7 @@ void SistemaImobiliaria::mostraPorTipo(int tipo)
                 continue;
             }
 
-            ImprimeImovel(imovs[i], j + 1);
+            ImprimeImovel(imovs[i], j);
             j++;
         break;
         }
