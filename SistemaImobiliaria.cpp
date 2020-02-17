@@ -54,13 +54,13 @@ void SistemaImobiliaria::removeImovel(string busca)
         }
     }
 
-    cout << "Digite o número do imóvel a ser removido" << endl;
+    cout << "Digite o número do imóvel a ser removido\n" << endl;
     cin >> it;
     it--;
     imovs[it]->disponivel = false;
     imovs.erase(imovs.begin() + it);
 
-    cout << "Imóvel removido com sucesso!" << endl;
+    cout << "Imóvel removido com sucesso!\n" << endl;
 }
 
 void SistemaImobiliaria::atualizaImovel(string busca, int tipo)
@@ -394,7 +394,7 @@ void SistemaImobiliaria::ImprimeImovel(Imovel *imv, int num)
         cout << "Área do terreno: " << ((Casa *)imv)->areaTer << endl;
         cout << "Área construída: " << ((Casa *)imv)->areaConst << endl;
         cout << "Número de pavimentos: " << ((Casa *)imv)->numPavimen << endl;
-        cout << "Número de quartos: " << ((Casa *)imv)->numQuartos << endl;
+        cout << "Número de quartos: " << ((Casa *)imv)->numQuartos <<"\n\n"<< endl;
         break;
 
         case 3:
@@ -402,7 +402,7 @@ void SistemaImobiliaria::ImprimeImovel(Imovel *imv, int num)
         cout << "Andar: " << ((Apartamento *)imv)->andar << endl;
         cout << "Número de vagas na garagem: " << ((Apartamento *)imv)->nvagasgaragem << endl;
         cout << "Número de quartos: " << ((Apartamento *)imv)->nquartos << endl;
-        cout << "Posição do apartamento: " << ((Apartamento *)imv)->posicao << endl;
+        cout << "Posição do apartamento: " << ((Apartamento *)imv)->posicao <<"\n\n"<< endl;
         break;
         }
 
