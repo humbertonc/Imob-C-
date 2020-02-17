@@ -47,10 +47,10 @@ int Casa::getNUMQUARTOS(){
     return this->numQuartos;
 }
 
-int Casa::getAREACONST(){
+double Casa::getAREACONST(){
     return this->areaConst;
 }
 
-int Casa::getAREATER(){
+double Casa::getAREATER(){
     return this->areaTer;
 }
