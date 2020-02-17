@@ -57,7 +57,7 @@ void SistemaImobiliaria::removeImovel(string busca)
     cout << "Digite o número do imóvel a ser removido" << endl;
     cin >> it;
     it--;
-
+    imovs[it]->disponivel = false;
     imovs.erase(imovs.begin() + it);
 
     cout << "Imóvel removido com sucesso!" << endl;
@@ -502,8 +502,6 @@ void SistemaImobiliaria::mostraPorTipo(int tipo)
         break;
         }
 
-        default:
-        cout << "Opção inválida!" << endl;
     }
 }
 
