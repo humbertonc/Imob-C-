@@ -18,11 +18,10 @@ setlocale(LC_ALL, "Portuguese");
     int tipao;
     SistemaImobiliaria sist;
 
-    Apartamento *papt;
     bool av;
-    int numero, quart, pav, nquartos, andar, nvagasgaragem;
-    double valor, area, ater, aconst;
-    string titulao, descrica, posicao;
+    int numero, quart, pav, anda, nq, nv;
+    double valor, area, ater, aconst, arapt;
+    string titulao, descrica, posapt;
     ifstream arquivo;
 	arquivo.open("lista.txt");
 
@@ -32,30 +31,23 @@ setlocale(LC_ALL, "Portuguese");
         if(tipao == 1){
             Terreno *pter = new Terreno();
             Endereco ende = Endereco();
-
             getline(arquivo, titulao);
             pter->setTitulo(titulao);
-
             getline(arquivo, descrica);
             pter->setDescricao(descrica);
-
             arquivo >> av;
+            arquivo.ignore();
             pter->setAouV(av);
-
             arquivo >> valor;
             arquivo.ignore();
             pter->setValor(valor);
-
             getline(arquivo, ende.bairro);
             getline(arquivo, ende.cep);
             getline(arquivo, ende.cidade);
-
             arquivo >> ende.numero;
             arquivo.ignore();
-
             getline(arquivo, ende.rua);
             arquivo >> area;
-
             arquivo.ignore();
             pter->setArea(area);
 
@@ -65,40 +57,31 @@ setlocale(LC_ALL, "Portuguese");
         }else if(tipao == 2){
             Casa *pcasa = new Casa();
             Endereco ende = Endereco();
-
             getline(arquivo, titulao);
             pcasa->setTitulo(titulao);
-
             getline(arquivo, descrica);
             pcasa->setDescricao(descrica);
-
             arquivo >> av;
+            arquivo.ignore();
             pcasa->setAouV(av);
-
             arquivo >> valor;
             arquivo.ignore();
             pcasa->setValor(valor);
-
             getline(arquivo, ende.bairro);
             getline(arquivo, ende.cep);
             getline(arquivo, ende.cidade);
-
             arquivo >> ende.numero;
             arquivo.ignore();
             getline(arquivo, ende.rua);
-
             arquivo >> aconst;
             arquivo.ignore();
             pcasa->setAREACONST(aconst);
-
             arquivo >> ater;
             arquivo.ignore();
             pcasa->setAREATER(ater);
-
             arquivo >> pav;
             arquivo.ignore();
             pcasa->setNUMPAVIMEN(pav);
-
             arquivo >> quart;
             arquivo.ignore();
             pcasa->setNUMQUARTOS(quart);
@@ -107,57 +90,49 @@ setlocale(LC_ALL, "Portuguese");
 
             sist.imovs.push_back(pcasa);
         }else if(tipao == 3){
-            Apartamento *ap1 = new Apartamento();
+            Apartamento *papt = new Apartamento();
             Endereco ende = Endereco();
-
             getline(arquivo, titulao);
-            ap1->setTitulo(titulao);
-
+            papt->setTitulo(titulao);
             getline(arquivo, descrica);
-            ap1->setDescricao(descrica);
-
+            papt->setDescricao(descrica);
             arquivo >> av;
-            ap1->setAouV(av);
-
+            arquivo.ignore();
+            papt->setAouV(av);
             arquivo >> valor;
             arquivo.ignore();
-            ap1->setValor(valor);
-
+            papt->setValor(valor);
             getline(arquivo, ende.bairro);
             getline(arquivo, ende.cep);
             getline(arquivo, ende.cidade);
-
             arquivo >> ende.numero;
             arquivo.ignore();
             getline(arquivo, ende.rua);
 
-            arquivo >> area;
+            arquivo >> anda;
             arquivo.ignore();
-            ap1->area = area;
+            papt->andar = anda;
 
-            arquivo >> nquartos;
+            arquivo >> arapt;
             arquivo.ignore();
-            ap1->nquartos = nquartos;
+            papt->area = arapt;
 
-            arquivo >> posicao;
+            arquivo >> nq;
             arquivo.ignore();
-            ap1->posicao = posicao;
+            papt->nquartos = nq;
 
-            arquivo >> andar;
+            arquivo >> nv;
             arquivo.ignore();
-            ap1->andar = andar;
+            papt->nvagasgaragem = nv;
 
-            arquivo >> valor;
-            arquivo.ignore();
-            ap1->valor = valor;
+            getline(arquivo, posapt);
+            papt->posicao = posapt;
 
-            arquivo >> nvagasgaragem;
-            arquivo.ignore();
-            ap1->nvagasgaragem = nvagasgaragem;
+            papt->setEndereco(ende);
 
-            ap1->setEndereco(ende);
-            sist.imovs.push_back(ap1);
+            sist.imovs.push_back(papt);
         }
+
     }
     arquivo.close();
 
@@ -169,7 +144,7 @@ setlocale(LC_ALL, "Portuguese");
     cout << ("4. Editar Imóvel \n");
     cout << ("5. Deletar Imóvel \n");
     cout << ("6. Sair\n");
-    cout << ("Atenção! Apenas saia do programa utilizando o comando sair!");
+    cout << ("Atenção! Apenas saia do programa utilizando o comando sair!\n\n");
 
     cin >> menu;
         switch(menu){
