@@ -15,7 +15,87 @@ using namespace std;
 int main(){
 setlocale(LC_ALL, "Portuguese");
     int i, menu = 0;
+    int tipao;
     SistemaImobiliaria sist;
+
+    Apartamento *papt;
+    bool av;
+    int numero, quart, pav;
+    double valor, area, ater, aconst;
+    string titulao, descrica;
+    ifstream arquivo;
+	arquivo.open("lista.txt");
+
+    while(!arquivo.eof()){
+        arquivo >> tipao;
+        arquivo.ignore();
+        if(tipao == 1){
+            Terreno *pter = new Terreno();
+            Endereco ende = Endereco();
+            getline(arquivo, titulao);
+            pter->setTitulo(titulao);
+            getline(arquivo, descrica);
+            pter->setDescricao(descrica);
+            arquivo >> av;
+            pter->setAouV(av);
+            arquivo >> valor;
+            arquivo.ignore();
+            pter->setValor(valor);
+            getline(arquivo, ende.bairro);
+            getline(arquivo, ende.cep);
+            getline(arquivo, ende.cidade);
+            arquivo >> ende.numero;
+            arquivo.ignore();
+            getline(arquivo, ende.rua);
+            arquivo >> area;
+            arquivo.ignore();
+            pter->setArea(area);
+
+            pter->setEndereco(ende);
+
+            sist.imovs.push_back(pter);
+        }else if(tipao == 2){
+            Casa *pcasa = new Casa();
+            Endereco ende = Endereco();
+            getline(arquivo, titulao);
+            pcasa->setTitulo(titulao);
+            getline(arquivo, descrica);
+            pcasa->setDescricao(descrica);
+            arquivo >> av;
+            pcasa->setAouV(av);
+            arquivo >> valor;
+            arquivo.ignore();
+            pcasa->setValor(valor);
+            getline(arquivo, ende.bairro);
+            getline(arquivo, ende.cep);
+            getline(arquivo, ende.cidade);
+            arquivo >> ende.numero;
+            arquivo.ignore();
+            getline(arquivo, ende.rua);
+            arquivo >> aconst;
+            arquivo.ignore();
+            pcasa->setAREACONST(aconst);
+            arquivo >> ater;
+            arquivo.ignore();
+            pcasa->setAREATER(ater);
+            arquivo >> pav;
+            arquivo.ignore();
+            pcasa->setNUMPAVIMEN(pav);
+            arquivo >> quart;
+            arquivo.ignore();
+            pcasa->setNUMQUARTOS(quart);
+
+            pcasa->setEndereco(ende);
+
+            sist.imovs.push_back(pcasa);
+        }else if(tipao == 3){
+        
+        
+        }
+
+    }
+    arquivo.close();
+
   while(menu != 6){
     cout <<("========Seja bem-vindo ao nosso sistema de imobiliária!========\n\n");
     cout << ("1. Criar Imóvel \n");
@@ -23,7 +103,8 @@ setlocale(LC_ALL, "Portuguese");
     cout << ("3. Listar Imóvel \n");
     cout << ("4. Editar Imóvel \n");
     cout << ("5. Deletar Imóvel \n");
-    cout << ("6. Sair\n\n");
+    cout << ("6. Sair\n");
+    cout << ("Atenção! Apenas saia do programa utilizando o comando sair!");
 
     cin >> menu;
         switch(menu){
