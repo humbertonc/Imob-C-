@@ -438,7 +438,7 @@ void SistemaImobiliaria::mostraTodos()
             continue;
         }
 
-        ImprimeImovelRed(imovs[i], j + 1);
+        ImprimeImovelRed(imovs[i], j);
         j++;
     }
 
@@ -450,7 +450,7 @@ void SistemaImobiliaria::mostraTodos()
             continue;
         }
 
-        ImprimeImovelRed(imovs[i], j + 1);
+        ImprimeImovelRed(imovs[i], j);
         j++;
     }
 }
