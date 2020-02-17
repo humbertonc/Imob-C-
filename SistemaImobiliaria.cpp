@@ -9,11 +9,7 @@ using namespace std;
 
 SistemaImobiliaria::SistemaImobiliaria()
 {
-    int i;
 
-    for(i = 0; i < 100; i++){
-
-    }
 }
 
 void SistemaImobiliaria::cadastraImovel(Imovel *iv)
@@ -43,14 +39,17 @@ void SistemaImobiliaria::removeImovel(string busca)
         case 1:
         cout << "Tipo: Terreno" << endl;
         ImprimeImovel(imovs[i], i+1);
+        cout << endl;
         break;
         case 2:
         cout << "Tipo: Casa" << endl;
         ImprimeImovel(imovs[i], i+1);
+        cout << endl;
         break;
         case 3:
         cout << "Tipo: Apartamento" << endl;
         ImprimeImovel(imovs[i], i+1);
+        cout << endl;
         break;
         }
     }
@@ -66,12 +65,12 @@ void SistemaImobiliaria::removeImovel(string busca)
 
 void SistemaImobiliaria::atualizaImovel(string busca, int tipo)
 {
-    int i, j = 1, it;
+    int i, it;
     string minuscula;
 
         transform(busca.begin(), busca.end(), busca.begin(), ::tolower);
     switch(tipo){
-    case 1:
+    case 1:{
     cout << "========= TERRENOS ========" << endl;
     cout << endl;
 
@@ -87,11 +86,12 @@ void SistemaImobiliaria::atualizaImovel(string busca, int tipo)
 
         ImprimeImovel(imovs[i], i+1);
         cout << "" << endl;
+    }
         cout << "Digite o número do terreno a ser atualizado" << endl;
         cin >> it;
         it--;
         Terreno *t1 =  new Terreno();
-        Endereco ende = Endereco();
+        Endereco ende1 = Endereco();
             cout <<("Título do anúncio do terreno:\n");
             string vardescricao;
             cin.ignore();
@@ -128,37 +128,38 @@ void SistemaImobiliaria::atualizaImovel(string busca, int tipo)
                 cin.ignore();
                 getline(cin, varcidade);
 
-                ende.cidade = varcidade;
+                ende1.cidade = varcidade;
                 cout <<("Bairro do terreno:\n");
                 string varbairro;
                 getline(cin, varbairro);
 
-                ende.bairro = varbairro;
+                ende1.bairro = varbairro;
                 cout <<("Rua do terreno:\n");
                 string varrua;
 
                 getline(cin, varrua);
 
-                ende.rua = varrua;
+                ende1.rua = varrua;
                 cout <<("Número do terreno na rua:\n");
                 int varnumero;
                 cin >> varnumero;
-                ende.numero = varnumero;
+                ende1.numero = varnumero;
                 cout <<("CEP do terreno:\n");
                 string varcep;
                 cin.ignore();
                 getline(cin, varcep);
 
-                ende.cep = varcep;
+                ende1.cep = varcep;
                 t1->disponivel = true;
-                t1->setEndereco(ende);
-                imovs[i] = t1;
+                t1->setEndereco(ende1);
+                imovs[it]->disponivel = false;
+                imovs[it] = t1;
     }
-    break;
-    case 2:
+        break;
+    case 2:{
     cout << "========= CASAS ========" << endl;
     cout << endl;
-    j = 1;
+
     for(i = 0; i < imovs.size(); i++)
     {
 
@@ -171,15 +172,96 @@ void SistemaImobiliaria::atualizaImovel(string busca, int tipo)
 
         ImprimeImovel(imovs[i], i+1);
         cout << "" << endl;
+    }
         cout << "Digite o número do imóvel a ser atualizado" << endl;
         cin >> it;
         it--;
-    }
+        Casa *c1 = new Casa();
+        Endereco ende2 = Endereco();
+
+         cout <<("Título do anúncio da casa:\n");
+         string vardescricao2;
+        cin.ignore();
+        getline(cin, vardescricao2);
+
+        c1->setTitulo(vardescricao2);
+
+        cout <<("Descrição da casa:\n");
+        getline(cin, vardescricao2);
+        c1->setDescricao(vardescricao2);
+
+        cout << "Número de pavimentos: \n";
+        int varpavimentos;
+        cin >> varpavimentos;
+        c1->setNUMPAVIMEN(varpavimentos);
+        cout << "Número de quartos: \n";
+        int varnumquartos;
+        cin >> varnumquartos;
+        c1->setNUMQUARTOS(varnumquartos);
+        cout << "Área do terreno da casa: \n";
+        double varareaterrenocasa;
+        cin >> varareaterrenocasa;
+        c1->setAREATER(varareaterrenocasa);
+                        //area construida
+        cout << "Área construída:\n";
+        double varareaconstruidacasa;
+        cin >> varareaconstruidacasa;
+        c1->setAREACONST(varareaconstruidacasa);
+        cout <<("Valor da casa:\n");
+        double varvalor2;
+        cin >> varvalor2;
+        c1->setValor(varvalor2);
+        cout <<("A casa está para venda(1), ou para aluguel(2)?\n");
+        int varaouv1;
+        bool varaouv2;
+        cin >> varaouv1;
+        if(varaouv1 == 1){
+        varaouv2 = true;
+        }
+        else{
+            varaouv2 = false;
+        }
+        c1->setAouV(varaouv2);
+        cout <<("Cidade da casa:\n");
+        string varcidade2;
+        cin.ignore();
+        getline(cin, varcidade2);
+
+        ende2.cidade = varcidade2;
+        cout <<("Bairro da casa:\n");
+        string varbairro2;
+
+        getline(cin, varbairro2);
+
+        ende2.bairro = varbairro2;
+        cout <<("Rua da casa:\n");
+        string varrua2;
+
+        getline(cin, varrua2);
+
+        ende2.rua = varrua2;
+        cout <<("Número da casa na rua:\n");
+        int varnumero2;
+        cin >> varnumero2;
+        ende2.numero = varnumero2;
+        cout <<("CEP da casa:\n");
+        string varcep2;
+        cin.ignore();
+        getline(cin, varcep2);
+
+        ende2.cep = varcep2;
+        c1->disponivel = true;
+        c1->setEndereco(ende2);
+
+        imovs[it]->disponivel = false;
+        imovs[it] = c1;
+
     break;
+    }
     case 3:
     cout << "========= APARTAMENTOS ========" << endl;
     cout << endl;
-    j = 1;
+
     for(i = 0; i < imovs.size(); i++)
     {
 
@@ -193,10 +275,92 @@ void SistemaImobiliaria::atualizaImovel(string busca, int tipo)
         ImprimeImovel(imovs[i], i+1);
 
         cout << "" << endl;
+    }
         cout << "Digite o número do imóvel a ser atualizado" << endl;
         cin >> it;
         it--;
-    }
+        Apartamento *ap1 = new Apartamento();
+        Endereco ende3 = Endereco();
+
+        cout <<("Título do anúncio do apartamento:\n");
+        string vardescricao3;
+        cin.ignore();
+        getline(cin, vardescricao3);
+
+        ap1->setTitulo(vardescricao3);
+        cout <<("Descrição do apartamento:\n");
+        getline(cin, vardescricao3);
+
+        ap1->setDescricao(vardescricao3);
+        cout <<("Área do apartamento: \n");
+        double varareaapartamento;
+        cin >> varareaapartamento;
+        ap1->area = varareaapartamento;
+        cout <<("Número de quartos: \n");
+        int varnumeroquartos;
+        cin >> varnumeroquartos;
+        ap1->nquartos = varnumeroquartos;
+        cout <<("Posicao do apartamento: \n");
+        string varposicao;
+        cin.ignore();
+        getline(cin, varposicao);
+
+        cout <<("Andar do apartamento: \n");
+        int varandar;
+        cin >> varandar;
+        ap1->andar = varandar;
+        cout <<("Valor do condomínio do apartamento: \n");
+        double varvalorcondominio;
+        cin >> varvalorcondominio;
+        ap1->setValor(varvalorcondominio);
+        cout <<("Número de vagas na garagem do apartamento: \n");
+        int varnumerovagasgaragemapt;
+        cin >> varnumerovagasgaragemapt;
+        ap1->nvagasgaragem = varnumerovagasgaragemapt;
+        cout <<("O apartamento está para venda(1), ou para aluguel(2)? \n");
+        int varaouv1;
+        bool varaouv2;
+        cin >> varaouv1;
+        if(varaouv1 == 1){
+            varaouv2 = true;
+        }
+        else{
+            varaouv2 = false;
+        }
+        ap1->setAouV(varaouv2);
+        cout <<("Cidade do apartamento:\n");
+        string varcidade3;
+        cin.ignore();
+        getline(cin, varcidade3);
+
+        ende3.cidade = varcidade3;
+        cout <<("Bairro do apartamento:\n");
+
+        string varbairro3;
+        getline(cin, varbairro3);
+        ende3.bairro = varbairro3;
+
+        cout <<("Rua do apartamento:\n");
+        string varrua3;
+
+        getline(cin, varrua3);
+
+        ende3.rua = varrua3;
+        cout <<("Número do apartamento na rua:\n");
+        int varnumero3;
+        cin >> varnumero3;
+        ende3.numero = varnumero3;
+        cout <<("CEP do apartamento:\n");
+        string varcep3;
+        cin.ignore();
+        getline(cin, varcep3);
+        ende3.cep = varcep3;
+        ap1->disponivel = true;
+        ap1->setEndereco(ende3);
+
+        imovs[it]->disponivel = false;
+        imovs[it] = ap1;
+
     break;
     }
 
