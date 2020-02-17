@@ -342,7 +342,7 @@ setlocale(LC_ALL, "Portuguese");
                     case 3:{
                         cout << "Ver o imóveis disponíveis para venda (1) ou para aluguel(2): \n" << endl;
                         bool seletor;
-                        int seleint
+                        int seleint;
                         cin >> seleint;
                         if(seleint == 1){
                             seletor = true;
@@ -377,35 +377,33 @@ setlocale(LC_ALL, "Portuguese");
             break;
             case 6:{//Sair
                 fstream arquivo;
-                arquivo.open("lista.txt");
-                arquivo << "Teste";
+                arquivo.open("lista.txt",  ios::out | ios::trunc);
                 for(int i=0; sist.imovs.size(); i++){
                     arquivo << sist.imovs[i]->getTipo() << endl;
                     arquivo << sist.imovs[i]->getTitulo() << endl;
                     arquivo << sist.imovs[i]->getDescricao() << endl;
                     arquivo << sist.imovs[i]->getAouV() << endl;
                     arquivo << sist.imovs[i]->getValor() << endl;
-                    arquivo << sist.imovs[i]->endereco.bairro << endl;
-                    arquivo << sist.imovs[i]->endereco.cep << endl;
-                    arquivo << sist.imovs[i]->endereco.cidade << endl;
-                    arquivo << sist.imovs[i]->endereco.numero << endl;
-                    arquivo << sist.imovs[i]->endereco.rua << endl;
+                    arquivo << sist.imovs[i]->getEndereco().bairro << endl;
+                    arquivo << sist.imovs[i]->getEndereco().cep << endl;
+                    arquivo << sist.imovs[i]->getEndereco().cidade << endl;
+                    arquivo << sist.imovs[i]->getEndereco().numero << endl;
+                    arquivo << sist.imovs[i]->getEndereco().rua << endl;
                     if(sist.imovs[i]->getTipo() == 1){
                         arquivo << ((Terreno *)sist.imovs[i])->area << endl;
                     }
-                    if(sist.imovs[i]->tipoImovel == 2){
+                    if(sist.imovs[i]->getTipo() == 2){
                         arquivo << ((Casa *)sist.imovs[i])->areaConst << endl;
                         arquivo << ((Casa *)sist.imovs[i])->areaTer << endl;
                         arquivo << ((Casa *)sist.imovs[i])->numPavimen << endl;
                         arquivo << ((Casa *)sist.imovs[i])->numQuartos << endl;
                     }
-                    if(sist.imovs[i]->tipoImovel == 3){
+                    if(sist.imovs[i]->getTipo() == 3){
                         arquivo << ((Apartamento *)sist.imovs[i])->andar << endl;
                         arquivo << ((Apartamento *)sist.imovs[i])->area << endl;
                         arquivo << ((Apartamento *)sist.imovs[i])->nquartos << endl;
                         arquivo << ((Apartamento *)sist.imovs[i])->nvagasgaragem << endl;
                         arquivo << ((Apartamento *)sist.imovs[i])->posicao << endl;
-                        arquivo << ((Apartamento *)sist.imovs[i])->valor << endl;
                     }
                 }
                 arquivo.close();
@@ -413,7 +411,6 @@ setlocale(LC_ALL, "Portuguese");
             break;
 
         }
-        break;
     }
 return 0;
 }
