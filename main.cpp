@@ -394,69 +394,7 @@ setlocale(LC_ALL, "Portuguese");
                     arquivo << ((Apartamento *)sist.imovs[i])->valor;
                     arquivo << ((Terreno *)sist.imovs[i])->area;
                 }
-
-                //ARQUIVO__________TERRENO__________________________________________
-                /*arquivo << "Descrição: " << t1->getDescricao() << endl;
-                arquivo << "Valor: " << t1->getValor() << endl;
-                if (t1->getAouV()) {
-                    arquivo << "Disponível para venda" << endl;
-                }
-                else {
-                    arquivo << "Disponível para aluguel" << endl;
-                }
-                arquivo << "Área: " << t1->area << endl;
-                arquivo << "   Endereco:" << endl;
-                arquivo << "Rua: " << t1->getEndereco().rua << endl;
-                arquivo << "Número: " << t1->getEndereco().numero << endl;
-                arquivo << "CEP: " << t1->getEndereco().cep << endl;
-                arquivo << "Bairro: " << t1->getEndereco().bairro << endl;
-                arquivo << "Cidade: " << t1->getEndereco().cidade << endl;
-                arquivo << "\n" << endl;
-                //_______ARQUIVO_______CASAS______________________________________________
-                arquivo << "Titulo: " << c1.getTitulo() << endl;
-                arquivo << "Descrição: " << c1.getDescricao() << endl;
-                arquivo << "Valor: " << c1.getValor() << endl;
-                if (c1.getAouV()) {
-                    arquivo << "Disponível para venda" << endl;
-                }
-                else {
-                    arquivo << "Disponível para aluguel" << endl;
-                }
-                arquivo << "Área do terreno: " << c1.areaTer << endl;
-                arquivo << "Área construída: " << c1.areaConst << endl;
-                arquivo << "Número de pavimentos: " << c1.numPavimen << endl;
-                arquivo << "Número de quartos: " << c1.numQuartos << endl;
-                arquivo << "   Endereco:" << endl;
-                arquivo << "Rua: " << c1.getEndereco().rua << endl;
-                arquivo << "Número: " << c1.getEndereco().numero << endl;
-                arquivo << "CEP: " << c1.getEndereco().cep << endl;
-                arquivo << "Bairro: " << c1.getEndereco().bairro << endl;
-                arquivo << "Cidade: " << c1.getEndereco().cidade << endl;
-                arquivo << "\n" << endl;
-                //_______ARQUIVO_______APARTAMENTO______________________________________________
-                arquivo <<": " << ap1.getTitulo() << "\n" << endl;
-                arquivo << "Descrição: " << ap1.getDescricao() << endl;
-                arquivo << "Valor: " << ap1.getValor() << endl;
-                if (ap1.getAouV()) {
-                    arquivo << "Disponível para venda" << endl;
-                }
-                else {
-                    arquivo << "Disponível para aluguel" << endl;
-                }
-                arquivo << "Área: " << ap1.area << endl;
-                arquivo << "Andar: " << ap1.andar << endl;
-                arquivo << "Número de vagas na garagem: " << ap1.nvagasgaragem << endl;
-                arquivo << "Número de quartos: " << ap1.nquartos << endl;
-                arquivo << "Posição do apartamento: " << ap1.posicao << endl;
-                arquivo << "   Endereco:" << endl;
-                arquivo << "Rua: " << ap1.getEndereco().rua << endl;
-                arquivo << "Número: " << ap1.getEndereco().numero << endl;
-                arquivo << "CEP: " << ap1.getEndereco().cep << endl;
-                arquivo << "Bairro: " << ap1.getEndereco().bairro << endl;
-                arquivo << "Cidade: " << ap1.getEndereco().cidade << endl;
-                arquivo << "\n" << endl;
                 arquivo.close();
-                }*/
                 return 0;
             }
             break;
