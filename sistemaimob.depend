@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1581905191 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\src\apartamento.cpp
+	"Apartamento.h"
+	<string>
+
+1581883851 c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\include\apartamento.h
+	<Imovel.h>
+	<string>
+	<vector>
+
+1581896158 c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\include\imovel.h
+	"Endereco.h"
+	<string>
+
+1581883691 c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\include\endereco.h
+	<string>
+
+1581907617 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\src\casa.cpp
+	"Casa.h"
+	<string>
+	<vector>
+
+1581907635 c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\include\casa.h
+	<Imovel.h>
+	<string>
+	<vector>
+
+1581883691 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\src\endereco.cpp
+	"Endereco.h"
+
+1581883691 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\src\imovel.cpp
+	"Imovel.h"
+
+1581905410 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\src\sistemaimobiliaria.cpp
+	"SistemaImobiliaria.h"
+	<iostream>
+	"stdio.h"
+	<string>
+	<algorithm>
+	<vector>
+
+1581905412 c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\include\sistemaimobiliaria.h
+	"Imovel.h"
+	"Casa.h"
+	"Terreno.h"
+	"Apartamento.h"
+	<string>
+	<vector>
+
+1581883789 c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\include\terreno.h
+	<Imovel.h>
+	<string>
+	<vector>
+
+1581883789 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\src\terreno.cpp
+	"Terreno.h"
+	<string>
+	<vector>
+
+1581910523 source:c:\users\edgelson\desktop\p2\derzu\projeto 2\sistemaimob\main.cpp
+	<iostream>
+	<string>
+	<Imovel.h>
+	<Casa.h>
+	<Terreno.h>
+	<Apartamento.h>
+	<locale.h>
+	<Endereco.h>
+	<SistemaImobiliaria.h>
+	<vector>
+	<fstream>
+

@@ -10,10 +10,10 @@ class Terreno : public Imovel
     public:
         Terreno();
         Terreno(double AREA);
+        void setArea(double ar);
+        double getArea();
         double area;
-        int disponivel;
-    protected:
-    private:
+
 };
 
 #endif // TERRENO_H

@@ -2,7 +2,6 @@
 #define IMOVEL_H
 #include "Endereco.h"
 #include <string>
-#include <vector>
 
 using namespace std;
 class Imovel
@@ -25,9 +24,6 @@ class Imovel
         void setTitulo(string titu);
 
         bool disponivel;
-
-
-    protected:
         int tipoImovel;
         Endereco endereco;
         bool aouv;

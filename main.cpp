@@ -17,12 +17,12 @@ setlocale(LC_ALL, "Portuguese");
     int i, menu = 0;
     SistemaImobiliaria sist;
   while(menu != 6){
-    cout <<("========Seja bem-vindo ao nosso sistema de imobili√°ria!========\n\n");
-    cout << ("1. Criar Im√≥vel \n");
-    cout << ("2. Buscar Im√≥vel \n");
-    cout << ("3. Listar Im√≥vel \n");
-    cout << ("4. Editar Im√≥vel \n");
-    cout << ("5. Deletar Im√≥vel \n");
+    cout <<("========Seja bem-vindo ao nosso sistema de imobili·ria!========\n\n");
+    cout << ("1. Criar ImÛvel \n");
+    cout << ("2. Buscar ImÛvel \n");
+    cout << ("3. Listar ImÛvel \n");
+    cout << ("4. Editar ImÛvel \n");
+    cout << ("5. Deletar ImÛvel \n");
     cout << ("6. Sair\n\n");
 
     cin >> menu;
@@ -36,21 +36,21 @@ setlocale(LC_ALL, "Portuguese");
                     switch(menu123){
                     case 1:
                         {
-                        cout <<("Por favor, digite as informa√ß√µes referentes ao terreno.\n\n");
+                        cout <<("Por favor, digite as informaÁıes referentes ao terreno.\n\n");
                         Terreno *t1 = new Terreno();
                         Endereco ende = Endereco();
-                        cout <<("T√≠tulo do an√∫ncio do terreno:\n");
+                        cout <<("TÌtulo do an˙ncio do terreno:\n");
                         string vardescricao;
                         cin.ignore();
                         getline(cin, vardescricao);
 
                         t1->setTitulo(vardescricao);
-                        cout <<("Descri√ß√£o do terreno:\n");
+                        cout <<("DescriÁ„o do terreno:\n");
 
                         getline(cin, vardescricao);
 
                         t1->setDescricao(vardescricao);
-                        cout <<("√Årea do terreno:\n");
+                        cout <<("¡rea do terreno:\n");
                         double vararea;
                         cin >> vararea;
                         t1->setArea(vararea);
@@ -58,7 +58,7 @@ setlocale(LC_ALL, "Portuguese");
                         double varvalor;
                         cin >> varvalor;
                         t1->setValor(varvalor);
-                        cout <<("O terreno est√° para venda(1), ou para aluguel(2)?\n");
+                        cout <<("O terreno est· para venda(1), ou para aluguel(2)?\n");
                         int varaouv1;
                         bool varaouv2;
                         cin >> varaouv1;
@@ -87,7 +87,7 @@ setlocale(LC_ALL, "Portuguese");
                         getline(cin, varrua);
 
                         ende.rua = varrua;
-                        cout <<("N√∫mero do terreno na rua:\n");
+                        cout <<("N˙mero do terreno na rua:\n");
                         int varnumero;
                         cin >> varnumero;
                         ende.numero = varnumero;
@@ -105,34 +105,34 @@ setlocale(LC_ALL, "Portuguese");
                         }
                     case 2:
                         {
-                        cout <<("Por favor, digite as informa√ß√µes referentes √† casa.\n\n");
+                        cout <<("Por favor, digite as informaÁıes referentes ‡ casa.\n\n");
                         Casa *c1 = new Casa();
                         Endereco ende = Endereco();
-                        cout <<("T√≠tulo do an√∫ncio da casa:\n");
+                        cout <<("TÌtulo do an˙ncio da casa:\n");
                         string vardescricao2;
                             cin.ignore();
                         getline(cin, vardescricao2);
 
                         c1->setTitulo(vardescricao2);
 
-                        cout <<("Descri√ß√£o da casa:\n");
+                        cout <<("DescriÁ„o da casa:\n");
                         getline(cin, vardescricao2);
                         c1->setDescricao(vardescricao2);
 
-                        cout << "N√∫mero de pavimentos: \n";
+                        cout << "N˙mero de pavimentos: \n";
                         int varpavimentos;
                         cin >> varpavimentos;
                         c1->setNUMPAVIMEN(varpavimentos);
-                        cout << "N√∫mero de quartos: \n";
+                        cout << "N˙mero de quartos: \n";
                         int varnumquartos;
                         cin >> varnumquartos;
                         c1->setNUMQUARTOS(varnumquartos);
-                        cout << "√Årea do terreno da casa: \n";
+                        cout << "¡rea do terreno da casa: \n";
                         double varareaterrenocasa;
                         cin >> varareaterrenocasa;
                         c1->setAREATER(varareaterrenocasa);
                         //area construida
-                        cout << "√Årea constru√≠da:\n";
+                        cout << "¡rea construÌda:\n";
                         double varareaconstruidacasa;
                         cin >> varareaconstruidacasa;
                         c1->setAREACONST(varareaconstruidacasa);
@@ -140,7 +140,7 @@ setlocale(LC_ALL, "Portuguese");
                         double varvalor2;
                         cin >> varvalor2;
                         c1->setValor(varvalor2);
-                        cout <<("A casa est√° para venda(1), ou para aluguel(2)?\n");
+                        cout <<("A casa est· para venda(1), ou para aluguel(2)?\n");
                         int varaouv1;
                         bool varaouv2;
                         cin >> varaouv1;
@@ -169,7 +169,7 @@ setlocale(LC_ALL, "Portuguese");
                         getline(cin, varrua2);
 
                         ende.rua = varrua2;
-                        cout <<("N√∫mero da casa na rua:\n");
+                        cout <<("N˙mero da casa na rua:\n");
                         int varnumero2;
                         cin >> varnumero2;
                         ende.numero = varnumero2;
@@ -187,24 +187,24 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     case 3:
                         {
-                         cout <<("Por favor, digite as informa√ß√µes referentes ao apartamento.\n\n");
+                         cout <<("Por favor, digite as informaÁıes referentes ao apartamento.\n\n");
                         Apartamento *ap1 = new Apartamento();
                         Endereco ende = Endereco();
-                        cout <<("T√≠tulo do an√∫ncio do apartamento:\n");
+                        cout <<("TÌtulo do an˙ncio do apartamento:\n");
                         string vardescricao3;
                         cin.ignore();
                         getline(cin, vardescricao3);
 
                         ap1->setTitulo(vardescricao3);
-                        cout <<("Descri√ß√£o do apartamento:\n");
+                        cout <<("DescriÁ„o do apartamento:\n");
                         getline(cin, vardescricao3);
 
                         ap1->setDescricao(vardescricao3);
-                        cout <<("√Årea do apartamento: \n");
+                        cout <<("¡rea do apartamento: \n");
                         double varareaapartamento;
                         cin >> varareaapartamento;
                         ap1->area = varareaapartamento;
-                        cout <<("N√∫mero de quartos: \n");
+                        cout <<("N˙mero de quartos: \n");
                         int varnumeroquartos;
                         cin >> varnumeroquartos;
                         ap1->nquartos = varnumeroquartos;
@@ -217,15 +217,15 @@ setlocale(LC_ALL, "Portuguese");
                         int varandar;
                         cin >> varandar;
                         ap1->andar = varandar;
-                        cout <<("Valor do condom√≠nio do apartamento: \n");
+                        cout <<("Valor do condomÌnio do apartamento: \n");
                         double varvalorcondominio;
                         cin >> varvalorcondominio;
                         ap1->setValor(varvalorcondominio);
-                        cout <<("N√∫mero de vagas na garagem do apartamento: \n");
+                        cout <<("N˙mero de vagas na garagem do apartamento: \n");
                         int varnumerovagasgaragemapt;
                         cin >> varnumerovagasgaragemapt;
                         ap1->nvagasgaragem = varnumerovagasgaragemapt;
-                        cout <<("O apartamento est√° para venda(1), ou para aluguel(2)? \n");
+                        cout <<("O apartamento est· para venda(1), ou para aluguel(2)? \n");
                         int varaouv1;
                         bool varaouv2;
                         cin >> varaouv1;
@@ -254,7 +254,7 @@ setlocale(LC_ALL, "Portuguese");
                         getline(cin, varrua3);
 
                         ende.rua = varrua3;
-                        cout <<("N√∫mero do apartamento na rua:\n");
+                        cout <<("N˙mero do apartamento na rua:\n");
                         int varnumero3;
                         cin >> varnumero3;
                         ende.numero = varnumero3;
@@ -273,15 +273,15 @@ setlocale(LC_ALL, "Portuguese");
             }
             break;
             case 2:{//Buscar
-                cout << ("1. Buscar im√≥vel por t√≠tulo: \n");
-                cout << ("2. Buscar im√≥vel por bairro: \n");
-                cout << ("3. Buscar im√≥vel por cidade: \n");
-                cout << ("4. Buscar por preco de im√≥vel: \n");
+                cout << ("1. Buscar imÛvel por tÌtulo: \n");
+                cout << ("2. Buscar imÛvel por bairro: \n");
+                cout << ("3. Buscar imÛvel por cidade: \n");
+                cout << ("4. Buscar por preco de imÛvel: \n");
                 int opcao;
                 cin >> opcao;
                 switch(opcao){
                     case 1:{
-                        cout << ("Busque o im√≥vel por t√≠tulo: \n");
+                        cout << ("Busque o imÛvel por tÌtulo: \n");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
@@ -290,7 +290,7 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 2:{
-                        cout << ("Busque o im√≥vel por bairro: \n");
+                        cout << ("Busque o imÛvel por bairro: \n");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
@@ -299,7 +299,7 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 3:{
-                        cout << ("Busque o im√≥vel por cidade: \n");
+                        cout << ("Busque o imÛvel por cidade: \n");
                         string busca;
                         cin.ignore();
                         getline(cin, busca);
@@ -308,10 +308,10 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 4:{
-                        cout << ("Digite o valor m√≠nimo do im√≥vel a ser buscado (se n√£o quiser valor m√≠nimo, digite 0): \n");
+                        cout << ("Digite o valor mÌnimo do imÛvel a ser buscado (se n„o quiser valor mÌnimo, digite 0): \n");
                         int minimo;
                         cin >> minimo;
-                        cout << ("Digite o valor m√°ximo do im√≥vel (se n√£o quiser valor m√°ximo, digite 0): \n");
+                        cout << ("Digite o valor m·ximo do imÛvel (se n„o quiser valor m·ximo, digite 0): \n");
 
                         int maximo;
                         cin >> maximo;
@@ -322,9 +322,9 @@ setlocale(LC_ALL, "Portuguese");
             }
             break;
             case 3:{//Listar
-                cout << "1. Visualizar todos os im√≥veis: \n";
-                cout << "2. Visualizar os im√≥veis por tipo: \n";
-                cout << "3. Visualizar os im√≥veis por aluguel ou venda: \n";
+                cout << "1. Visualizar todos os imÛveis: \n";
+                cout << "2. Visualizar os imÛveis por tipo: \n";
+                cout << "3. Visualizar os imÛveis por aluguel ou venda: \n";
                 int visualizar;
                 cin >> visualizar;
                 switch(visualizar){
@@ -333,7 +333,7 @@ setlocale(LC_ALL, "Portuguese");
                         break;
                     }
                     case 2:{
-                        cout << ("Tipo de im√≥vel: 1 - TERRENO, 2 - CASA, 3 - APARTAMENTO") << endl;
+                        cout << ("Tipo de imÛvel: 1 - TERRENO, 2 - CASA, 3 - APARTAMENTO") << endl;
                         int tipo;
                         cin >> tipo;
                         sist.mostraPorTipo(tipo);
@@ -350,19 +350,19 @@ setlocale(LC_ALL, "Portuguese");
             }
             break;
             case 4:{//Editar
-                cout << ("Busque o t√≠tulo do im√≥vel a ser atualizado: ");
+                cout << ("Busque o tÌtulo do imÛvel a ser atualizado: ");
                 string busca;
                 cin.ignore();
                 getline(cin, busca);
                 int tipo;
-                cout << ("Digite o tipo do im√≥vel") << endl;
+                cout << ("Digite o tipo do imÛvel") << endl;
                 cout << "1-Terreno   2-Casa   3-Apartamento";
                 cin >> tipo;
-                sist.atualizaImovel(busca, tipo); //j√° cont√©m os inputs do case 4: EDITAR
+                sist.atualizaImovel(busca, tipo); //j· contÈm os inputs do case 4: EDITAR
             }
             break;
             case 5:{//Deletar
-                cout << ("Busque o t√≠tulo do im√≥vel a ser deletado: ");
+                cout << ("Busque o tÌtulo do imÛvel a ser deletado: ");
                 string busca;
                 cin.ignore();
                 getline(cin, busca);
@@ -384,22 +384,30 @@ setlocale(LC_ALL, "Portuguese");
                     arquivo << sist.imovs[i]->endereco.cidade << endl;
                     arquivo << sist.imovs[i]->endereco.numero << endl;
                     arquivo << sist.imovs[i]->endereco.rua << endl;
-                    //erros abaixo
-                    arquivo << ((Casa.sistsist.imovs[i])->areaConst << endl;
-                    arquivo << ((Casa*)sist.imovs[i])->areaTer << endl;
-                    arquivo << ((Apartamento*)sist.imovs[i])->andar << endl;
-                    arquivo << ((Apartamento*)sist.imovs[i])->area << endl;
-                    arquivo << ((Apartamento*)sist.imovs[i])->nquartos << endl;
-                    arquivo << ((Apartamento*)sist.imovs[i])->nvagasgaragem << endl;
-                    arquivo << ((Apartamento*)sist.imovs[i])->posicao << endl;
-                    arquivo << ((Apartamento*)sist.imovs[i])->valor << endl;
-                    arquivo << ((Terreno*)sist.imovs[i])->area << endl;
+                    if(sist.imovs[i]->getTipo() == 1){
+                        arquivo << ((Terreno *)sist.imovs[i])->area << endl;
+                    }
+                    if(sist.imovs[i]->tipoImovel == 2){
+                        arquivo << ((Casa *)sist.imovs[i])->areaConst << endl;
+                        arquivo << ((Casa *)sist.imovs[i])->areaTer << endl;
+                        arquivo << ((Casa *)sist.imovs[i])->numPavimen << endl;
+                        arquivo << ((Casa *)sist.imovs[i])->numQuartos << endl;
+                    }
+                    if(sist.imovs[i]->tipoImovel == 3){
+                        arquivo << ((Apartamento *)sist.imovs[i])->andar << endl;
+                        arquivo << ((Apartamento *)sist.imovs[i])->area << endl;
+                        arquivo << ((Apartamento *)sist.imovs[i])->nquartos << endl;
+                        arquivo << ((Apartamento *)sist.imovs[i])->nvagasgaragem << endl;
+                        arquivo << ((Apartamento *)sist.imovs[i])->posicao << endl;
+                        arquivo << ((Apartamento *)sist.imovs[i])->valor << endl;
+                    }
                 }
                 arquivo.close();
-                return 0;
             }
             break;
-            }
+
+        }
+        break;
     }
 return 0;
 }
