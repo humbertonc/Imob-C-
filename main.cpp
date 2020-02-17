@@ -373,6 +373,27 @@ setlocale(LC_ALL, "Portuguese");
                 fstream arquivo;
                 arquivo.open("lista.txt");
                 arquivo << "Teste";
+                for(int i=0; sist.imovs.size(); i++){
+                    arquivo << sist.imovs[i]->getAouV();
+                    arquivo << sist.imovs[i]->getDescricao();
+                    arquivo << sist.imovs[i]->getTipo();
+                    arquivo << sist.imovs[i]->getTitulo();
+                    arquivo << sist.imovs[i]->getValor();
+                    arquivo << sist.imovs[i]->endereco.bairro;
+                    arquivo << sist.imovs[i]->endereco.cep;
+                    arquivo << sist.imovs[i]->endereco.cidade;
+                    arquivo << sist.imovs[i]->endereco.numero;
+                    arquivo << sist.imovs[i]->endereco.rua;
+                    arquivo << ((Casa *)sist.imovs[i])->areaConst;
+                    arquivo << ((Casa *)sist.imovs[i])->areaTer;
+                    arquivo << ((Apartamento *)sist.imovs[i])->andar;
+                    arquivo << ((Apartamento *)sist.imovs[i])->area;
+                    arquivo << ((Apartamento *)sist.imovs[i])->nquartos;
+                    arquivo << ((Apartamento *)sist.imovs[i])->nvagasgaragem;
+                    arquivo << ((Apartamento *)sist.imovs[i])->posicao;
+                    arquivo << ((Apartamento *)sist.imovs[i])->valor;
+                    arquivo << ((Terreno *)sist.imovs[i])->area;
+                }
 
                 //ARQUIVO__________TERRENO__________________________________________
                 /*arquivo << "Descrição: " << t1->getDescricao() << endl;
